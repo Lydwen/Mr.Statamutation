@@ -13,7 +13,7 @@ Tools
 
 - .java
 - mutators
-- locators
+- selectors
 - jUnit
 - Maven
 - result.xml
@@ -40,6 +40,8 @@ A mutation is a source code modification.
 - if "extends", delete override methods
 - replace "public" by "private" and backward
 - add or remove "final"
+- replace return values by "NULL"
+- remove/replace function called 
 
 
 Mutator model :
@@ -48,9 +50,9 @@ Mutator model :
 - a replacing entity  (or set of entities - or nothing)
 
 
-Locators
+Selectors :
 
-A locator is a specifier describing where to apply mutation (which file, etc.)
+A selector is a specifier describing where to apply mutation (which file, etc.)
 
 - apply mutation to ALL FILES & ALL OCCURRENCES 
 - apply mutation to ONE FILE & ALL OCCURRENCES
