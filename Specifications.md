@@ -81,6 +81,7 @@ The process will consist in a set of operations.
 
 - Javac
 - Bytecode
+- Maven ?
 	
 	
 	3. COMPILATION -> TESTING
@@ -93,7 +94,7 @@ The process will consist in a set of operations.
 - XML files
 
 
-	5. AUTOMATIZATION
+	5. AUTOMATION
 	
 - Maven
 		
