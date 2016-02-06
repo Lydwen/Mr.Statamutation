@@ -12,8 +12,10 @@
 
 I. Project Description
 
-This project aims at building an architecture able to automatize testing operations on mutated program, using tools such as Maven, Spoon and jUnit.
-A mutated program is a program on which has been applied a mutation. A mutation consists in modifying, removing or adding a part of a program.
+This project aims at building a software architecture able to automatize testing operations on mutated program, 
+using tools such as Maven, Spoon and jUnit. This is the Mutation Testing. 
+A mutated program is a program on which has been applied a mutation. 
+A mutation consists in modifying, removing or adding a part of a program.
 
 
 II. Tools
@@ -24,23 +26,43 @@ Several tools will be used for this project in order to facilitate and automatiz
 	
 		a. Spoon 
 		
+Spoon leverages to provide super fast sandboxes for developers and testers to spin up test environments.
+It will be used because it rapidly rollbacks changes and execute tests and accelerates test cycles by eliminating 
+the need to install application dependencies and modify configuration.
+		
+		
 		b. Mutators
+		
+A set of mutators will be created, which define the way source code will be changed. 
+Three kind of mutators will be defined : a mutator for the add of code, a mutator for code replacement,
+and a mutator for removing code. 		
+		
 		
 		c. Selectors
 		
+A set of selectors will be implemented, which define the part of code that will be modified 
+or where a new code will be added. Also, several types of selector will be defined, according
+to the number of files that has to be mutated, and to the number of mutations that has to be done. 
 		
-	2. Testing with jUnit
+		
+	2. Testing with JUnit
 
+JUnit is a unit testing framework for the Java programming language. 
+It will be used for testing the mutated code.
+xxx
 
 	3. Building with Maven
 
+xxx
 	
 	4. Reports as XML files
-
-
 	
-
+xxx
+	
+	
 III. Assembly Line
+
+The process will consist in a set of operations.
 
 	1. SOURCE CODE -> MUTATED CODE
 
@@ -71,7 +93,7 @@ III. Assembly Line
 - Maven
 
 
-IV. Mutations
+IV. Mutators
 
 A mutation is a source code modification. We will use at least these mutations :
 - replace "+" by "-" and conversely
@@ -112,3 +134,10 @@ Selector model :
 - source file(s) to apply mutation on
 - type (unit or percent)
 - number of "entity to replace" that will be replaced in the selected files  
+
+
+VI. References
+
+Mutation Testing : https://en.wikipedia.org/wiki/Mutation_testing
+Spoon : https://spoon.net/docs
+JUnit : https://en.wikipedia.org/wiki/JUnit
