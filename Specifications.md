@@ -65,7 +65,7 @@ It will be used for the automation of the mutated programs compilations.
 Results of the testing part will be defined in XML files.
 	
 	
-III. Assembly Line
+III. Assembly Line / Whole Process
 
 The process will consist in a set of operations.
 
