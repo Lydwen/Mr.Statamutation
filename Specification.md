@@ -11,7 +11,7 @@ blablabla
 
 Tools
 
-- .java
+- source files (.java) 
 - mutators
 - selectors
 - jUnit
@@ -35,7 +35,6 @@ A mutation is a source code modification.
 - replace "/" by "*" and backward
 - replace "&" by "&&" (same for "|")
 - replace "&" by "|" (same for "&&")
-- change boolean values
 - change conditions order ("X && Y" becomes "Y && X")
 - if "extends", delete override methods
 - replace "public" by "private" and backward
