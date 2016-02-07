@@ -68,9 +68,9 @@ The process will consist in a set of operations.
 ####1. SOURCE CODE -> MUTATED CODE
 
 - Entry : 
-.* Source code
-.* A set of selectors
-.* A set of mutation
+  * Source code
+  * A set of selectors
+  * A set of mutation
 
 - Exit : a set of Mutants
 
