@@ -62,7 +62,7 @@ and formatted as an HTML report.
 	
 #III. Build Chain
 
-We will have a bash script which will generate mutants, compile them, test them and then it will launch the generation of the html report.
+We will have a python script which will generate mutants, compile them, test them and then it will launch the generation of the html report.
 The process will consist in a set of operations.
 
 
