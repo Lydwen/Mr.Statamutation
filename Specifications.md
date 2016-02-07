@@ -66,7 +66,7 @@ We will have a bash script which will generate mutants, compile them, test them 
 The process will consist in a set of operations.
 
 
-![Image of the build chain](http://www.noelshack.com/2016-05-1454869732-cycle-build.png)
+![Image of the build chain](https://github.com/Lydwen/Mr.Statamutation/blob/master/data/images/cycle%20build.png "The build chain")
 
 ####1. SOURCE CODE -> MUTATED CODE
 
