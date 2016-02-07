@@ -62,32 +62,40 @@ and formatted as an HTML report.
 	
 #III. Assembly Line / Whole Process
 
+We will have a bash script which will generate mutants, compile them, test them and then it will launch the generation of the html report.
 The process will consist in a set of operations.
 
 ####1. SOURCE CODE -> MUTATED CODE
 
-- Source code
-- Mutators
-- Selectors
-- Spoon
+- Entry : 
+* Source code
+* A set of selectors
+* A set of mutation
+
+- Exit : a set of Mutants
+
+- With Spoon, we will generate a mutant for each pair (mutation,selector) that we have.
 
 ####2. MUTATED CODE -> COMPILATION
 
-- Javac
-- Bytecode
-- Maven ?
+- Entry : a mutant
+- Exit : Bytecode
 
-####3. COMPILATION -> TESTING
+- With maven we will launch the compilation of the mutant.
+
+####3. COMPILATION -> TESTING -> REPORT
 	
-- JUnit
+- Entry : the compiled program we want to test
+- Exit : the XML report of JUnit
 
-####4. TESTING -> REPORT
+- Thanks to JUnit we will test the mutant and then have an xml report. Thanks to maven, we will launch all of them automatically. 
 
-- XML files
-
-####5. AUTOMATION
+####5. REPORTS -> HTML REPORT
 	
-- Maven
+- Entry : a set of reports
+- Exit : a report in HTML
+ 
+- A java program will take all the reports in entry and use them to generate a HTML page with charts to have a better view of how great is our source code.
 
 #IV. Mutators
 
