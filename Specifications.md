@@ -118,6 +118,7 @@ A mutation is a source code modification. We will use at least these mutations :
 - replace "public" by "private" and conversely
 - add or remove "final" in front of variable declarations
 - replace return values by "NULL"
+- replace object declaration by "NULL"
 - remove/replace function called 
 
 Mutator model :
@@ -129,12 +130,18 @@ Mutator model :
 V. Selectors
 
 A selector is a specifier describing where to apply mutation (which file, etc.).
-We will at least use these ways for mutation applications :
-- apply mutation to ALL FILES & ALL OCCURRENCES 
-- apply mutation to ONE FILE & ALL OCCURRENCES
-- apply mutation to ONE FILE & ONE OCCURRENCE
-- apply mutation to ALL FILES & A CERTAIN PERCENTAGE OF OCCURRENCES (ex: apply mutation to 60% of the file)
-- apply mutation to ONE FILE & A CERTAIN PERCENTAGE OF OCCURRENCES
+We will have three kind of mutations : ONE, ALL, PERCENTAGE OF, applied on **files** (equivalent to classes in Java) and **occurrences**.
+Of course, the percentage is configurable, so there are a lot of possibilites for selections.
+By combination, every availables mutations are : 
+- apply mutation to **ALL** FILES           & **ALL** OCCURRENCES 
+- apply mutation to **ALL** FILES           & **ONE** OCCURRENCE
+- apply mutation to **ALL** FILES           & **PERCENTAGE OF** OCCURRENCES
+- apply mutation to **ONE** FILE            & **ALL** OCCURRENCES 
+- apply mutation to **ONE** FILE            & **ONE** OCCURRENCE
+- apply mutation to **ONE** FILE            & **PERCENTAGE OF** OCCURRENCES
+- apply mutation to **PERCENTAGE OF** FILES & **ALL** OCCURRENCES 
+- apply mutation to **PERCENTAGE OF** FILES & **ONE** OCCURRENCE
+- apply mutation to **PERCENTAGE OF** FILES & **PERCENTAGE OF** OCCURRENCES
 
 Selector model :
 - source file(s) to apply mutation on
@@ -144,7 +151,7 @@ Selector model :
 
 VI. References
 
-Mutation Testing : https://en.wikipedia.org/wiki/Mutation_testing
-Spoon : https://spoon.net/docs
-JUnit : https://en.wikipedia.org/wiki/JUnit
-Maven : https://en.wikipedia.org/wiki/Apache_Maven
+- Mutation Testing : https://en.wikipedia.org/wiki/Mutation_testing
+- Spoon : https://spoon.net/docs
+- JUnit : https://en.wikipedia.org/wiki/JUnit
+- Maven : https://en.wikipedia.org/wiki/Apache_Maven
