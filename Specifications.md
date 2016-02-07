@@ -10,7 +10,7 @@
 	SPECIFICATIONS
 ------------------------
 
-I. Project Description
+#I. Project Description
 
 This project aims at building a software architecture able to automatize testing operations on mutated program, 
 using tools such as Maven, Spoon and jUnit. This is the Mutation Testing. 
@@ -18,86 +18,78 @@ A mutated program is a program on which has been applied a mutation.
 A mutation consists in modifying, removing or adding a part of a program.
 
 
-II. Tools
+#II. Tools
 
 Several tools will be used for this project in order to facilitate and automatize the process.
 
-	1. Mutations
-	
-		a. Spoon 
+##1. Mutations
+###a. Spoon 
 		
 Spoon leverages to provide super fast sandboxes for developers and testers to spin up test environments.
 It will be used because it rapidly rollbacks changes and execute tests and accelerates test cycles by eliminating 
 the need to install application dependencies and modify configuration.
-		
-		
-		b. Mutators
-		
+
+###b. Mutators
+
 A set of mutators will be created, which define the way source code will be changed. 
 Three kind of mutators will be defined : a mutator for the add of code, a mutator for code replacement,
 and a mutator for removing code. 		
-		
-		
-		c. Selectors
-		
+
+###c. Selectors
+
 A set of selectors will be implemented, which define the part of code that will be modified 
 or where a new code will be added. Also, several types of selector will be defined, according
 to the number of files that has to be mutated, and to the number of mutations that has to be done. 
-		
-	2. Building with Maven
+
+##2. Building with Maven
 
 Maven is a build automation tool used primarily for Java projects. It describes how software is built 
 and describes its dependencies. Maven comes with pre-defined targets for performing certain well-defined 
 tasks such as compilation of code and its packaging.
 It will be used for the automation of the mutated programs compilations.
 
-	3. Testing with JUnit
+##3. Testing with JUnit
 
 JUnit is a unit testing framework for the Java programming language. 
 It will be used for testing the mutated code by determining weither or not the program has failed.
 Tests consists in a set of assertions about code functionalities. 
 
-	4. HTML Report
+##4. HTML Report
 	
 Results of the testing part will be defined in XML files. Thoses files will be used to generate statistics, 
 and formatted as an HTML report.
 	
 	
-III. Assembly Line / Whole Process
+#III. Assembly Line / Whole Process
 
 The process will consist in a set of operations.
 
-	1. SOURCE CODE -> MUTATED CODE
+####1. SOURCE CODE -> MUTATED CODE
 
 - Source code
 - Mutators
 - Selectors
 - Spoon
-	
-	
-	2. MUTATED CODE -> COMPILATION
+
+####2. MUTATED CODE -> COMPILATION
 
 - Javac
 - Bytecode
 - Maven ?
-	
-	
-	3. COMPILATION -> TESTING
+
+####3. COMPILATION -> TESTING
 	
 - JUnit
-	
-	
-	4. TESTING -> REPORT
+
+####4. TESTING -> REPORT
 
 - XML files
 
-
-	5. AUTOMATION
+####5. AUTOMATION
 	
 - Maven
-		
 
-IV. Mutators
+#IV. Mutators
 
 A mutation is a source code modification. We will use at least these mutations :
 - replace "+" by "-" and conversely
@@ -125,7 +117,7 @@ Mutator model :
 - a replacing entity  (or set of entities - or nothing)
 
 
-V. Selectors
+#V. Selectors
 
 A selector is a specifier describing where to apply mutation (which file, etc.).
 We will have three kind of mutations : ONE, ALL, PERCENTAGE OF, applied on **files** (equivalent to classes in Java) and **occurrences**.
@@ -147,7 +139,7 @@ Selector model :
 - number of "entity to replace" that will be replaced in the selected files  
 
 
-VI. References
+#VI. References
 
 - Mutation Testing : https://en.wikipedia.org/wiki/Mutation_testing
 - Spoon : https://spoon.net/docs
