@@ -44,25 +44,23 @@ A set of selectors will be implemented, which define the part of code that will 
 or where a new code will be added. Also, several types of selector will be defined, according
 to the number of files that has to be mutated, and to the number of mutations that has to be done. 
 		
-		
-	2. Testing with JUnit
-
-JUnit is a unit testing framework for the Java programming language. 
-It will be used for testing the mutated code by determining weither or not the program has failed.
-Tests consists in a set of assertions about code functionalities. 
-
-
-	3. Building with Maven
+	2. Building with Maven
 
 Maven is a build automation tool used primarily for Java projects. It describes how software is built 
 and describes its dependencies. Maven comes with pre-defined targets for performing certain well-defined 
 tasks such as compilation of code and its packaging.
 It will be used for the automation of the mutated programs compilations.
 
+	3. Testing with JUnit
+
+JUnit is a unit testing framework for the Java programming language. 
+It will be used for testing the mutated code by determining weither or not the program has failed.
+Tests consists in a set of assertions about code functionalities. 
+
+	4. HTML Report
 	
-	4. Reports as XML files
-	
-Results of the testing part will be defined in XML files.
+Results of the testing part will be defined in XML files. Thoses files will be used to generate statistics, 
+and formatted as an HTML report.
 	
 	
 III. Assembly Line / Whole Process
