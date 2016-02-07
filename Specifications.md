@@ -60,10 +60,13 @@ Results of the testing part will be defined in XML files. Thoses files will be u
 and formatted as an HTML report.
 	
 	
-#III. Assembly Line / Whole Process
+#III. Build Chain
 
 We will have a bash script which will generate mutants, compile them, test them and then it will launch the generation of the html report.
 The process will consist in a set of operations.
+
+
+![Image of the build chain](http://www.noelshack.com/2016-05-1454869732-cycle-build.png)
 
 ####1. SOURCE CODE -> MUTATED CODE
 
