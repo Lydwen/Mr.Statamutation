@@ -25,9 +25,9 @@ Several tools will be used for this project in order to facilitate and automatiz
 ##1. Mutations
 ###a. Spoon 
 		
-Spoon leverages to provide super fast sandboxes for developers and testers to spin up test environments.
-It will be used because it rapidly rollbacks changes and execute tests and accelerates test cycles by eliminating 
-the need to install application dependencies and modify configuration.
+Spoon is an open-source library that enables the modification of Java source code. 
+It takes as input source code and produces transformed source code ready to be compiled.
+It will be used to insert mutation in source code. 
 
 ###b. Mutators
 
@@ -56,7 +56,7 @@ Tests consists in a set of assertions about code functionalities.
 
 ##4. HTML Report
 	
-Results of the testing part will be defined in XML files. Thoses files will be used to generate statistics, 
+Results of the testing part will be defined in XML files. Theses files will be used to generate statistics, 
 and formatted as an HTML report.
 	
 	
@@ -98,7 +98,9 @@ The process will consist in a set of operations.
 - Entry : a set of reports
 - Exit : a report in HTML
  
-- A java program will take all the reports in entry and use them to generate a HTML page with charts to have a better view of how great is our source code.
+- A python program will take all the reports in entry and use them to generate a HTML page with charts to have a better view of how great is our source code.
+This process needs to compare one by one the test results of the mutated code and the source code. 
+
 
 #IV. Mutators
 
@@ -127,13 +129,15 @@ Mutator model :
 - an entity to replace (or set of entities)
 - a replacing entity  (or set of entities - or nothing)
 
+/!\ Some mutation could imply infinite loops, so the we need to insert a TIMEOUT system.
+
 
 #V. Selectors
 
 A selector is a specifier describing where to apply mutation (which file, etc.).
 We will have three kind of mutations : ONE, ALL, PERCENTAGE OF, applied on **files** (equivalent to classes in Java) and **occurrences**.
-Of course, the percentage is configurable, so there are a lot of possibilites for selections.
-By combination, every availables mutations are : 
+Of course, the percentage is configurable, so there are a lot of possibilities for selections.
+By combination, every available mutations are : 
 - apply mutation to **ALL** FILES           & **ALL** OCCURRENCES 
 - apply mutation to **ALL** FILES           & **ONE** OCCURRENCE
 - apply mutation to **ALL** FILES           & **PERCENTAGE OF** OCCURRENCES
