@@ -1,7 +1,5 @@
 #!/usr/bin/python
-import os
 import xml.etree.ElementTree as Xml
-import pprint
 
 
 class JUnitXMLReader:
@@ -40,12 +38,3 @@ class JUnitXMLReader:
 
         # Return results
         return testsuite
-
-
-if __name__ == "__main__":
-    os.chdir('D:\\Google Drive\\Polytech\\_SI3\\_Semestre2\\OGL\\IslandExplorer\\target\\surefire-reports')
-    pprint.pprint(
-        JUnitXMLReader.read(
-            'TEST-fr.unice.polytech.ogl.islcb.model.results.extras.TransformExtrasTest.xml'
-        )
-    )
