@@ -3,13 +3,14 @@ import os
 import xml.etree.ElementTree as Xml
 import pprint
 
+
 class JUnitXMLReader:
     # def __init__(self):
 
     @staticmethod
-    def read(xmlFile):
+    def read(xmlfile):
         # Parse XML file
-        root = Xml.parse(xmlFile).getroot()
+        root = Xml.parse(xmlfile).getroot()
 
         # Initialize test suite results
         testsuite = root.attrib.copy()
