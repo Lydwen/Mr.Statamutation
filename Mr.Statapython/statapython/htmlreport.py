@@ -1,5 +1,6 @@
 #!/usr/bin/python
 import sys
+import os
 import argparse
 
 from stataxml import JUnitReport
@@ -7,7 +8,7 @@ from stataxml import JUnitReport
 
 def main(args):
     # Get report infos
-    report = JUnitReport.report(args.mutants_directory)
+    report = JUnitReport.report(os.path.join(args.mutants_directory, args.testsdir))
 
     # Display infos
     print(report.testsuites)
