@@ -1,14 +1,16 @@
-#!/usr/bin/python
 import xml.etree.ElementTree as Xml
 
 
 class JUnitXMLReader:
-    # def __init__(self):
-
     @staticmethod
-    def read(xmlfile):
+    def read_testsuite(file):
+        """
+        Parse the specified XML file and compute tests suite results.
+        :param file: XML report to read
+        :return: tests suite results
+        """
         # Parse XML file
-        root = Xml.parse(xmlfile).getroot()
+        root = Xml.parse(file).getroot()
 
         # Initialize test suite results
         testsuite = root.attrib.copy()
