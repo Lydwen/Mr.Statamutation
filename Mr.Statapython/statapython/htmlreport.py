@@ -1,19 +1,24 @@
 #!/usr/bin/python
-import os
-import pprint
 import sys
+import argparse
 
-from stataxml import JUnitXMLReader
+from stataxml import JUnitReport
 
 
-def main():
-    os.chdir('D:\\Google Drive\\Polytech\\_SI3\\_Semestre2\\OGL\\IslandExplorer\\target\\surefire-reports')
-    pprint.pprint(
-        JUnitXMLReader.read(
-            'TEST-fr.unice.polytech.ogl.islcb.model.results.extras.TransformExtrasTest.xml'
-        )
-    )
+def main(args):
+    # Get report infos
+    report = JUnitReport.report(args.mutants_directory)
+
+    # Display infos
+    print(report.testsuites)
+    print(report.counts)
 
 
 if __name__ == "__main__":
-    sys.exit(main())
+    # Enable command-line parsing
+    parser = argparse.ArgumentParser()
+    parser.add_argument("mutants_directory", help="all mutants main directory")
+    parser.add_argument("--testsdir", help="tests results sub-directory", default="target/surefire-reports")
+
+    # Start the main
+    sys.exit(main(parser.parse_args()))
