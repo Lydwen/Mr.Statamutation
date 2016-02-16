@@ -12,12 +12,14 @@ class JUnitXMLReader:
 
         # Initialize test suite results
         testsuite = root.attrib.copy()
+        testsuite['shortname'] = testsuite['name'].split('.')[-1]
         testsuite['testcases'] = []
 
         # Check every test case results
         for element in root.iter('testcase'):
             # Initialize test case results
             testcase = element.attrib.copy()
+            del testcase['classname']  # Useless (already in testsuite)
 
             # Get errors
             errors = element.findall('error')

@@ -3,7 +3,7 @@ import os
 import pprint
 import sys
 
-from .xml import JUnitXMLReader
+from stataxml import JUnitXMLReader
 
 
 def main():

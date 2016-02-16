@@ -1,0 +1,1 @@
+from .junitxmlreader import JUnitXMLReader
