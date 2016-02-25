@@ -43,7 +43,7 @@ def copy_files(src, dest, nb_mutant=0):
 # === Main ===
 if __name__ == "__main__":
 	# Go to script directory
-	os.chdir(os.path.dirname(__file__))
+	os.path.dirname(os.path.abspath(__file__))
 	
 	# Original tests
 	print('\n\n===================== Programme original =====================\n\n')
