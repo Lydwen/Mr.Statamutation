@@ -7,11 +7,13 @@ COUNTS_TYPES = ['tests', 'failures', 'errors', 'skipped']
 
 
 class JUnitReport:
+    """ JUnit report object model. """
+
     def __init__(self):
         self.testsuites = []
+        self.counts = {'success': 0}
 
         # Init counts to 0
-        self.counts = {}
         for type in COUNTS_TYPES:
             self.counts[type] = 0
 
@@ -24,7 +26,12 @@ class JUnitReport:
 
         # Add counts
         for type in COUNTS_TYPES:
-            self.counts[type] += int(testsuite[type])
+            count = int(testsuite[type])
+            self.counts[type] += count
+
+            self.counts['success'] -= count
+
+        self.counts['success'] += int(testsuite['tests']) * 2  # x2 because of -= in loop
 
     @staticmethod
     def report(directory):
