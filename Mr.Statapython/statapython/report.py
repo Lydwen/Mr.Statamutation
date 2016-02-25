@@ -13,16 +13,29 @@ def main(args):
     :param args: script args
     :return: status
     """
+    original_report = None
+    mutations_reports = []
+
     # Compute reports
-    base_report = JUnitReport.report(os.path.join(args.tests_directory, '.'))
-    mutations_reports = [
-        JUnitReport.report(os.path.join(args.tests_directory, '.')),
-        JUnitReport.report(os.path.join(args.tests_directory, '.')),
-        JUnitReport.report(os.path.join(args.tests_directory, '.'))
-    ]
+    for dir_name in os.listdir(args.tests_directory):
+        directory = os.path.join(args.tests_directory, dir_name)
+
+        # Check if is a directory
+        if not (os.path.isdir(directory)):
+            continue
+
+        # Compute the report
+        report = JUnitReport.report(directory)
+
+        # Original report
+        if dir_name == args.original:
+            original_report = report
+        # Mutant report
+        else:
+            mutations_reports.append(report)
 
     # Render the report
-    ReportRenderer(base_report, mutations_reports).render_html(args.output)
+    ReportRenderer(original_report, mutations_reports).render_html(args.output)
 
 
 def get_parser():
@@ -41,6 +54,9 @@ def get_parser():
     parser.add_argument('-o', '--output',
                         help='HTML report output file (will be overwritten)',
                         default='./statam_report.html')
+    parser.add_argument('-g', '--original',
+                        help='original (not mutated) tests directory',
+                        default='original')
 
     return parser
 
