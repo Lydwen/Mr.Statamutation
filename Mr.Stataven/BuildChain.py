@@ -40,16 +40,25 @@ def copy_files(src, dest, nb_mutant=0):
         my_copytree(src, dest_folder)
     return
 
+# === Main ===
+if __name__ == "__main__":
+	# Go to script directory
+	os.chdir(os.path.dirname(__file__))
+	
+	# Original tests
+	print('\n\n===================== Programme original =====================\n\n')
+	os.system('mvn clean -Dstataprocessor="fr.polytech.devops.g1.stataspoon.NeutralProcessor" package')
+	my_copytree('./target/surefire-reports', './test-report/original')
 
-print("#Yolo je me suis lance\n")
-print("\n\n=====================On s'occupe du programme original=====================\n\n")
-retvalue = os.system("mvn clean \"-Dstataprocessor=fr.polytech.devops.g1.stataspoon.NeutralProcessor\" package")
-my_copytree("./target/surefire-reports", "./test-report/original")
+	# First mutation tests
+	print('\n\n===================== Programme avec mutations =====================\n\n')
+	os.system('mvn clean -Dstataprocessor="fr.polytech.devops.g1.stataspoon.PlusToMinusProcessor" package')
+	copy_files('./target/surefire-reports', './test-report', 1)
+	
+	# Run reporting
+	print('\n\n===================== Generation du report =====================\n\n')
+	os.chdir('../Mr.Statapython')
+	os.system('python -m statapython.report "../Mr.Stataven/test-report" -o "../Mr.Stataven/test-report/report.html"')
+	
+	print("#swag j'ai fini\n")
 
-
-print("\n\n=====================On commence a faire les mutants=====================\n\n")
-
-retvalue = os.system("mvn clean \"-Dstataprocessor=fr.polytech.devops.g1.stataspoon.PlusToMinusProcessor\" package")
-copy_files("./target/surefire-reports", "./test-report", 1)
-
-print("#swag j'ai fini\n")
