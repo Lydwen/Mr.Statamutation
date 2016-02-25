@@ -8,6 +8,7 @@ import junit.framework.TestCase;
 public class MainTest extends TestCase {
 
     public void testMain() throws Exception {
-
+	Main main = new Main();	
+	assertEquals(4, main.addition(1,3));
     }
 }
