@@ -42,6 +42,13 @@ def copy_files(src, dest, nb_mutant=0):
 
 
 print("#Yolo je me suis lance\n")
+print("\n\n=====================On s'occupe du programme original=====================\n\n")
+retvalue = os.system("mvn clean \"-Dstataprocessor=fr.polytech.devops.g1.stataspoon.NeutralProcessor\" package")
+my_copytree("./target/surefire-reports", "./test-report/original")
+
+
+print("\n\n=====================On commence a faire les mutants=====================\n\n")
+
 retvalue = os.system("mvn clean \"-Dstataprocessor=fr.polytech.devops.g1.stataspoon.PlusToMinusProcessor\" package")
 copy_files("./target/surefire-reports", "./test-report", 1)
 
