@@ -45,8 +45,10 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <processors>
-                        <processor>fr.polytech.devops.g1.stataspoon.NeutralProcessor</processor>
+                    <processors> 
+						<processor>
+							${stataprocessor}
+						</processor>
                     </processors>
                 </configuration>
                 <!-- To be sure that you use the latest version of Spoon, specify it as dependency. -->
