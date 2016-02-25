@@ -2,6 +2,8 @@ import xml.etree.ElementTree as Xml
 
 
 class JUnitXMLReader:
+    """ JUnit XML files reader. """
+
     @staticmethod
     def read_testsuite(file):
         """
