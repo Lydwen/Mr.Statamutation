@@ -43,6 +43,8 @@ def copy_files(src, dest, nb_mutant=0):
 
 print("#Yolo je me suis lance\n")
 #copy_files("/home/user/etranger", "./test/here/mutant", 4)
-retvalue = os.system("mvn clean \"-Dstataprocessor=fr.polytech.devops.g1.stataspoon.NeutralProcessor\" package")
+retvalue = os.system("mvn clean \"-Dstataprocessor=fr.polytech.devops.g1.stataspoon.PlusToMinusProcessor\" package")
+
+
 
 print("#swag j'ai fini\n")
