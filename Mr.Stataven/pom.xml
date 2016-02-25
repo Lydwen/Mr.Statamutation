@@ -7,7 +7,7 @@
     <groupId>fr.polytech.devops.g1</groupId>
     <artifactId>stataven</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <name>DevOps :: Mr.Statamutation :: Stataven</name>
+    <name>DevOps :: Mr.Statamutation :: Mr.Stataven</name>
 
     <packaging>jar</packaging>
 
