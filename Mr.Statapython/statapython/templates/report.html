@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+
+    <style>
+        <!--
+        body {
+            width: 1000px;
+            height: 100%;
+            margin: auto;
+            padding: 30px;
+
+            background: lightblue;
+            border: solid black;
+            border-width: 3px 3px 0px 3px;
+
+            text-align: center;
+        }
+
+        table {
+            width: 100%;
+            margin-top: 30px;
+        }
+
+        table td {
+            border: 1px solid black;
+        }
+
+        table tr:first-child td {
+            border: 2px solid black;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<h1>{{ title }}</h1>
+<table>
+    {% for report in ([ base_report ] + mutations_reports) %}
+    <tr>
+        <td>{{ 'Base (no mutation)' if loop.index0 <= 0 else 'Mutation n&deg;' + (loop.index0 | string) }}</td>
+
+        {% for key, value in report.counts.items() %}
+        <td>{{ key }} : {{ value }}</td>
+        {% endfor %}
+
+        <td>{{ (report.counts['success'] / report.counts['tests'] * 100) | int }} &percnt;</td>
+    </tr>
+    {% endfor %}
+</table>
+</body>
+</html>
