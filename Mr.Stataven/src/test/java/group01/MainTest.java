@@ -32,5 +32,13 @@ public class MainTest extends TestCase {
 
         assertTrue(main.equal(5,5));
         assertFalse(main.equal(4,5));
+
+        assertTrue(main.and(true,true));
+        assertFalse(main.and(true,false));
+        assertFalse(main.and(false,false));
+
+        assertTrue(main.or(true,false));
+        assertTrue(main.or(true,true));
+        assertFalse(main.or(false,false));
     }
 }
