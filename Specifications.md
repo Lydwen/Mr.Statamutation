@@ -102,7 +102,7 @@ The process will consist in a set of operations.
 This process needs to compare one by one the test results of the mutated code and the source code. 
 
 
-#IV. Mutators
+#IV. Mutators  
 
 A mutation is a source code modification. We will use at least these mutations :
 - replace "+" by "-" and conversely
