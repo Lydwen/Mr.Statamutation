@@ -11,12 +11,9 @@ import spoon.reflect.code.CtBinaryOperator;
  */
 public class EqToIneqProcessor extends ProcessorModel {
 
-    @Override
-    public void process(CtBinaryOperator operator) {
-        // Mutate only = operator
-        if (!operator.getKind().equals(BinaryOperatorKind.EQ)) return;
-
-        // Change it to != operator
-        operator.setKind(BinaryOperatorKind.NE);
+    public EqToIneqProcessor(){
+        this.replaceThis = BinaryOperatorKind.EQ;
+        this.byThis = BinaryOperatorKind.NE;
     }
+
 }

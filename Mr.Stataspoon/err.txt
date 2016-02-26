@@ -1,0 +1,46 @@
+[INFO] Scanning for projects...
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building DevOps :: Mr.Statamutation :: Mr.Stataspoon 1.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ stataspoon ---
+[WARNING] Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] skip non existing resourceDirectory c:\Users\user\Desktop\Polytech\DevOps\Repository\Mr.Stataspoon\src\main\resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.2:compile (default-compile) @ stataspoon ---
+[INFO] Changes detected - recompiling the module!
+[WARNING] File encoding has not been set, using platform encoding Cp1252, i.e. build is platform dependent!
+[INFO] Compiling 7 source files to c:\Users\user\Desktop\Polytech\DevOps\Repository\Mr.Stataspoon\target\classes
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] /c:/Users/user/Desktop/Polytech/DevOps/Repository/Mr.Stataspoon/src/main/java/fr/polytech/devops/g1/stataspoon/TestModel.java:[13,5] illegal start of type
+[ERROR] /c:/Users/user/Desktop/Polytech/DevOps/Repository/Mr.Stataspoon/src/main/java/fr/polytech/devops/g1/stataspoon/TestModel.java:[13,9] ';' expected
+[ERROR] /c:/Users/user/Desktop/Polytech/DevOps/Repository/Mr.Stataspoon/src/main/java/fr/polytech/devops/g1/stataspoon/TestModel.java:[13,21] <identifier> expected
+[ERROR] /c:/Users/user/Desktop/Polytech/DevOps/Repository/Mr.Stataspoon/src/main/java/fr/polytech/devops/g1/stataspoon/TestModel.java:[14,5] illegal start of type
+[ERROR] /c:/Users/user/Desktop/Polytech/DevOps/Repository/Mr.Stataspoon/src/main/java/fr/polytech/devops/g1/stataspoon/TestModel.java:[14,9] ';' expected
+[ERROR] /c:/Users/user/Desktop/Polytech/DevOps/Repository/Mr.Stataspoon/src/main/java/fr/polytech/devops/g1/stataspoon/TestModel.java:[14,16] <identifier> expected
+[INFO] 6 errors 
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 1.270 s
+[INFO] Finished at: 2016-02-26T09:02:57+01:00
+[INFO] Final Memory: 10M/109M
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.2:compile (default-compile) on project stataspoon: Compilation failure: Compilation failure:
+[ERROR] /c:/Users/user/Desktop/Polytech/DevOps/Repository/Mr.Stataspoon/src/main/java/fr/polytech/devops/g1/stataspoon/TestModel.java:[13,5] illegal start of type
+[ERROR] /c:/Users/user/Desktop/Polytech/DevOps/Repository/Mr.Stataspoon/src/main/java/fr/polytech/devops/g1/stataspoon/TestModel.java:[13,9] ';' expected
+[ERROR] /c:/Users/user/Desktop/Polytech/DevOps/Repository/Mr.Stataspoon/src/main/java/fr/polytech/devops/g1/stataspoon/TestModel.java:[13,21] <identifier> expected
+[ERROR] /c:/Users/user/Desktop/Polytech/DevOps/Repository/Mr.Stataspoon/src/main/java/fr/polytech/devops/g1/stataspoon/TestModel.java:[14,5] illegal start of type
+[ERROR] /c:/Users/user/Desktop/Polytech/DevOps/Repository/Mr.Stataspoon/src/main/java/fr/polytech/devops/g1/stataspoon/TestModel.java:[14,9] ';' expected
+[ERROR] /c:/Users/user/Desktop/Polytech/DevOps/Repository/Mr.Stataspoon/src/main/java/fr/polytech/devops/g1/stataspoon/TestModel.java:[14,16] <identifier> expected
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

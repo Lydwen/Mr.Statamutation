@@ -9,13 +9,9 @@ import spoon.reflect.code.CtBinaryOperator;
  *
  * @author Kevin Buisson
  */
-public class PlusToMinusProcessor extends AbstractProcessor<CtBinaryOperator> {
-    @Override
-    public void process(CtBinaryOperator operator) {
-        // Mutate only + operator
-        if (!operator.getKind().equals(BinaryOperatorKind.PLUS)) return;
-
-        // Change it to - operator
-        operator.setKind(BinaryOperatorKind.MINUS);
+public class PlusToMinusProcessor extends ProcessorModel {
+    public PlusToMinusProcessor(){
+        this.replaceThis = BinaryOperatorKind.PLUS;
+        this.byThis = BinaryOperatorKind.MINUS;
     }
 }

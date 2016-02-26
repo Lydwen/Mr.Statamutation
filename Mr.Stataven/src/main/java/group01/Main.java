@@ -6,7 +6,6 @@ public class Main {
         System.out.println("Hellooooooo World!");
     }
 
-    public int addition(int a, int b){
-	return a+b;
-    }
+    public int addition(int a, int b){ return a+b; }
+    public int soustraction(int a, int b){ return a-b; }
 }

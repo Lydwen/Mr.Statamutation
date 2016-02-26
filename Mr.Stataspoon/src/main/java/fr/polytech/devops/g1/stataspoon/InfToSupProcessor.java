@@ -11,12 +11,8 @@ import spoon.reflect.code.CtBinaryOperator;
  */
 public class InfToSupProcessor extends ProcessorModel {
 
-    @Override
-    public void process(CtBinaryOperator operator) {
-        // Mutate only < operator
-        if (!operator.getKind().equals(BinaryOperatorKind.LT)) return;
-
-        // Change it to > operator
-        operator.setKind(BinaryOperatorKind.GT);
+    public InfToSupProcessor(){
+        this.replaceThis = BinaryOperatorKind.LT;
+        this.byThis = BinaryOperatorKind.GT;
     }
 }

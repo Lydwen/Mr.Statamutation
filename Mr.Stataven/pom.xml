@@ -45,9 +45,9 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <processors> 
+                    <processors>
 						<processor>
-							${stataprocessor}
+							fr.polytech.devops.g1.stataspoon.TestModel
 						</processor>
                     </processors>
                 </configuration>
