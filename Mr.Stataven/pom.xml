@@ -47,7 +47,7 @@
                 <configuration>
                     <processors>
 						<processor>
-							fr.polytech.devops.g1.stataspoon.TestModel
+							fr.polytech.devops.g1.stataspoon.InfEqToSupEqProcessor
 						</processor>
                     </processors>
                 </configuration>

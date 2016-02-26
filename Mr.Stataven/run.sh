@@ -1,1 +1,1 @@
-mvn clean -Dstataprocessor="fr.polytech.devops.g1.stataspoon.TestModel" package 
+mvn clean -Dstataprocessor="fr.polytech.devops.g1.stataspoon.InfEqToSupEqProcessor" package
