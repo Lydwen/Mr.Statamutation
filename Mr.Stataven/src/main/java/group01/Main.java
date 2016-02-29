@@ -13,6 +13,6 @@ public class Main {
     public boolean sup(int a, int b){ return a>b; }
     public boolean inf(int a, int b){ return a<b; }
     public boolean equal(int a, int b){ return a==b; }
-    public boolean and(int a, int b){ return a&b; }
-    public boolean or(int a, int b){ return a|b; }
+    public boolean and(boolean a, boolean b){ return a&&b; }
+    public boolean or(boolean a, boolean b){ return a||b; }
 }
