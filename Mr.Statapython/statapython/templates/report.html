@@ -39,13 +39,20 @@
 <table>
     {% for report in ([ base_report ] + mutations_reports) %}
     <tr>
-        <td>{{ 'Base (no mutation)' if loop.index0 <= 0 else 'Mutation n&deg;' + (loop.index0 | string) }}</td>
+        {% set short_name = report.name.split('.')[-1] %}
+        <td>{{ short_name }}</td>
 
+        {% if report.compilation_failed %}
+        <td colspan="6">Compilation failed</td>
+        {% else %}
         {% for key, value in report.counts.items() %}
         <td>{{ key }} : {{ value }}</td>
         {% endfor %}
 
+        {% if report.counts['tests'] > 0 %}
         <td>{{ (report.counts['success'] / report.counts['tests'] * 100) | int }} &percnt;</td>
+        {% endif %}
+        {% endif %}
     </tr>
     {% endfor %}
 </table>
