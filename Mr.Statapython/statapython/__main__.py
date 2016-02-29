@@ -39,7 +39,7 @@ def main(args):
     report_file = os.path.join(args.report_directory, REPORT_FILENAME)
     Logger.log('=============== Generating report ===============', True)
     Reporting(args.report_directory, args.original).report(report_file)
-    Logger.log('Report accessible at : %s' % report_file)
+    Logger.log('Report accessible at : %s' % os.path.abspath(report_file))
 
 
 def get_parser():
