@@ -22,13 +22,13 @@ public class MainTest extends TestCase {
 
         assertTrue(main.infeq(3,4));
         assertTrue(main.infeq(4,4));
-        assertFalse(main.infeq(4,6));
+        assertFalse(main.infeq(6,4));
 
         assertTrue(main.sup(5,4));
         assertFalse(main.sup(4,4));
 
         assertTrue(main.inf(4,5));
-        assertFalse(main.inf(4,5));
+        assertFalse(main.inf(4,4));
 
         assertTrue(main.equal(5,5));
         assertFalse(main.equal(4,5));
