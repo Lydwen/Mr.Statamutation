@@ -1,4 +1,4 @@
-package fr.polytech.devops.g1.stataspoon;
+package fr.polytech.devops.g1.stataspoon.processors;
 
 import spoon.processing.AbstractProcessor;
 import spoon.reflect.declaration.CtClass;
@@ -7,10 +7,8 @@ import spoon.reflect.declaration.CtClass;
  * NeutralProcessor, does nothing, just for build chain testing.
  *
  * @author Kévin Buisson
- * @modify Antoine Rollin
  */
-public class NeutralProcessor extends ProcessorModel {
-
+public class NeutralProcessor extends AbstractProcessor<CtClass<?>> {
     @Override
     public void process(CtClass<?> ctClass) {
         // Do nothing

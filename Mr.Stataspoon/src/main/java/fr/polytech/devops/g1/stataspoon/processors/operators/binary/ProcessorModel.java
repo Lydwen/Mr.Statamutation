@@ -1,4 +1,4 @@
-package fr.polytech.devops.g1.stataspoon;
+package fr.polytech.devops.g1.stataspoon.processors.operators.binary;
 
 import spoon.processing.AbstractProcessor;
 import spoon.reflect.code.BinaryOperatorKind;
@@ -13,6 +13,11 @@ public abstract class ProcessorModel extends AbstractProcessor<CtBinaryOperator>
 
     protected BinaryOperatorKind replaceThis;
     protected BinaryOperatorKind byThis;
+
+    protected ProcessorModel(BinaryOperatorKind replaceThis, BinaryOperatorKind byThis){
+        this.replaceThis = replaceThis;
+        this.byThis = byThis;
+    }
 
     @Override
     public void process(CtBinaryOperator operator) {
