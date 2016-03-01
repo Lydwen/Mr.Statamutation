@@ -233,7 +233,6 @@ a:after {
 #f {
 	background: #2d2d2d;
 	padding-top: 10px;
-	padding-bottom: 10px;
 	color: white;
 }
 
@@ -408,6 +407,33 @@ a:after {
 
 .pricing-option .pricing-signup:hover {
     background: #ff7878;
+}
+
+table {
+	margin: 0 auto !important;
+	float: none !important;
+
+    /*border-collapse: collapse;*/
+	width: 50%;
+	margin-bottom: 50px;
+}
+
+th {
+    background-color: #4CAF50;
+    color: white;
+	height: 50px;
+	text-align: center;
+	vertical-align: center;
+}
+
+th, td {
+    padding: 15px;
+	border-bottom: 1px solid #ddd;
+}
+
+tr:hover {
+	background-color: #BEBDE7;
+	color:white;
 }
 
 
