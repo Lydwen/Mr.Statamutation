@@ -18,5 +18,6 @@ setup(
     packages=find_packages(),
     package_data={
         'statapython.templates': ['*.html', '*.css']
-    }
+    },
+    install_requires=['Jinja2'],
 )
