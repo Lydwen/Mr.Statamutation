@@ -26,7 +26,10 @@ def main(args):
         os.chdir(os.path.abspath(args.project))
 
     # First, clean directory
-    Directory.delete(args.report_directory)
+    try:
+        Directory.delete(args.report_directory)
+    except:
+        Logger.log('[Warning] Error on cleaning repôrt directory ("%s")' % args.report_directory)
 
     # Create mutator tester, and execute original tests
     mutator = MutationsTester(args.tests_directory, args.report_directory)

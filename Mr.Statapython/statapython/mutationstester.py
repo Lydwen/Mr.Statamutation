@@ -18,7 +18,10 @@ class MutationsTester:
         """
         Delete tests directory.
         """
-        Directory.delete(self.tests_directory)
+        try:
+            Directory.delete(self.tests_directory)
+        except:
+            Logger.log('[Warning] Error on cleaning tests directory ("%s")' % self.tests_directory)
 
     def process(self, processor, output_dir=None):
         """
