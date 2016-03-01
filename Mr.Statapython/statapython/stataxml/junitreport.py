@@ -1,6 +1,6 @@
 import os
 
-from . import JUnitXMLReader
+from .junitxmlreader import JUnitXMLReader
 
 """ Tests suites counts type """
 COUNTS_TYPES = ['tests', 'failures', 'errors', 'skipped']
