@@ -17,7 +17,7 @@ setup(
 
     packages=find_packages(),
     package_data={
-        'statapython.templates': ['report.html', 'theme.zip']
+        'statapython.templates': ['report.html', 'tools.zip']
     },
     install_requires=['Jinja2'],
 )
