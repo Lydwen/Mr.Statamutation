@@ -44,13 +44,6 @@
                         </goals>
                     </execution>
                 </executions>
-                <configuration>
-                    <processors>
-						<processor>
-							${stataprocessor}
-						</processor>
-                    </processors>
-                </configuration>
                 <!-- To be sure that you use the latest version of Spoon, specify it as dependency. -->
                 <dependencies>
                     <dependency>
