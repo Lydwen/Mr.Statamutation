@@ -7,6 +7,14 @@ class Directory:
     """ Directory utils. """
 
     @staticmethod
+    def create(directory):
+        """
+        Create a directory recursively.
+        :param directory: directory to create
+        """
+        os.makedirs(directory)
+
+    @staticmethod
     def touch(file):
         """
         'Touch' the specified file.
@@ -14,7 +22,7 @@ class Directory:
         """
         # Create directory
         try:
-            os.makedirs(os.path.dirname(file))
+            Directory.create(os.path.dirname(file))
         except FileExistsError:
             pass
 
