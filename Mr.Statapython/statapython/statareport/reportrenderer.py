@@ -12,8 +12,8 @@ REPORT_ENCODING = 'UTF-8'
 """ Report title """
 REPORT_TITLE = 'DevOps :: Mr.Statamutation :: Report'
 
-""" Report theme zip file """
-REPORT_THEME = pkg_resources.resource_filename('statapython.templates', 'theme.zip')
+""" Report tools zip file """
+REPORT_TOOLS = pkg_resources.resource_filename('statapython.templates', 'tools.zip')
 
 
 class ReportRenderer:
@@ -43,15 +43,15 @@ class ReportRenderer:
         with open(filepath, 'wb') as file:
             file.write(report_rendered.encode(REPORT_ENCODING))
 
-        # Extract the theme
-        self.extract_theme(os.path.dirname(filepath))
+        # Extract the tools
+        self.extract_tools(os.path.dirname(filepath))
 
-    def extract_theme(self, directory):
+    def extract_tools(self, directory):
         """
-        Extract the theme to the report directory.
+        Extract the tools to the report directory.
         :param directory: report directory
         """
-        Logger.log('Extracting theme in the report directory...')
-        # Extract the theme
-        with zipfile.ZipFile(REPORT_THEME, 'r') as theme:
-            theme.extractall(directory)
+        Logger.log('Extracting theme/tools in the report directory...')
+        # Extract the tools
+        with zipfile.ZipFile(REPORT_TOOLS, 'r') as tools:
+            tools.extractall(directory)
