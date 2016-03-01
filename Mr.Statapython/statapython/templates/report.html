@@ -36,7 +36,7 @@
 	</div><!-- headerwrap -->
 	
 	<div class="col-lg-12">
-		<h1 class="centered"><i class="fa fa-edit"></i> {{ title }}</h1>
+		<h1 class="centered"><i class="fa fa-tasks"></i> {{ title }}</h1>
 		<table>
 			{% for report in ([ base_report ] + mutations_reports) %}
 			<tr>
@@ -91,13 +91,14 @@
 				},
 
 				xAxis: {
-					categories: ['Mutation n°1', 'Mutation n°2', 'Mutation n°3', 'Mutation n°4']
+					/*categories: ['Mutation n°1', 'Mutation n°2', 'Mutation n°3', 'Mutation n°4']*/
+					categories: {{ namesList }}
 				},
 
 				yAxis: {
 					allowDecimals: false,
 					min: 0,
-					/*max: 100,*/
+					max: 100,
 					title: {
 						text: 'Mutatation Tests Coverage (%)'
 					}
@@ -117,11 +118,13 @@
 
 				series: [{
 					name: 'Original',
-					data: [80, 60, 40, 20],
+					/*data: [80, 60, 40, 20],*/
+					data: {{ srcData }},
 					stack: 'comp'
 				}, {
 					name: 'Mutation',
-					data: [20, 40, 60, 80],
+					/*data: [20, 40, 60, 80],*/
+					data: {{ mutData }},
 					stack: 'comp'
 				}]
 			});
