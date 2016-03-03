@@ -36,7 +36,6 @@ def main(args):
     # Execute mutations
     mutator.process('BadassMutations',
                     ('fr.polytech.devops.g1.stataspoon.processors.operators.binary.PlusToMinusProcessor',
-                     'fr.polytech.devops.g1.stataspoon.processors.operators.binary.InfToSupProcessor',
                      'fr.polytech.devops.g1.stataspoon.processors.operators.binary.InfEqToSupEqProcessor'))
 
     # Compute reporting

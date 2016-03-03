@@ -10,6 +10,7 @@ public class Main {
     public int soustraction(int a, int b){ return a-b; }
     public boolean supeq(int a, int b){ return a>=b; }
     public boolean infeq(int a, int b){ return a<=b; }
+    public boolean infeq2(int a, int b){ return a<=b; }
     public boolean sup(int a, int b){ return a>b; }
     public boolean inf(int a, int b){ return a<b; }
     public boolean equal(int a, int b){ return a==b; }
