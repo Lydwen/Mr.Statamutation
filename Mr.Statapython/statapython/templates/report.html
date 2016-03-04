@@ -40,9 +40,9 @@
 		<table>
 			{% for report in ([ base_report ] + mutations_reports) %}
 			<tr>
-				<td>{{ 'Base (no mutation)' if loop.index0 <= 0 else 'Mutation n&deg;' + (loop.index0 | string) }}</td>
+				<td>{{ report.name }}</td>
 
-				{% for key, value in report.counts.items() %}
+				{% for key, value in report.counts | dictsort %}
 				<td>{{ key }} : {{ value }}</td>
 				{% endfor %}
 
@@ -87,12 +87,12 @@
 				},
 
 				title: {
-					text: 'StataCharts'
+					text: 'Percent of tests success by mutations'
 				},
 
 				xAxis: {
 					/*categories: ['Mutation n°1', 'Mutation n°2', 'Mutation n°3', 'Mutation n°4']*/
-					categories: {{ namesList }}
+					categories: [ {% for report in mutations_reports %} '{{ report.name }}', {% endfor %} ],
 				},
 
 				yAxis: {
@@ -117,21 +117,17 @@
 				},
 
 				series: [{
-					name: 'Original',
-					/*data: [80, 60, 40, 20],*/
-					data: {{ srcData }},
-					stack: 'comp'
-				}, {
-					name: 'Mutation',
+					name: 'Percent of tests',
 					/*data: [20, 40, 60, 80],*/
-					data: {{ mutData }},
+					data: [ 
+						{% for report in mutations_reports %}
+							{{ (report.counts['success'] / report.counts['tests'] * 100) | int }},
+						{% endfor %}
+					],
 					stack: 'comp'
 				}]
 			});
 		});
-
-
 	</script>
-	
   </body>
 </html>
