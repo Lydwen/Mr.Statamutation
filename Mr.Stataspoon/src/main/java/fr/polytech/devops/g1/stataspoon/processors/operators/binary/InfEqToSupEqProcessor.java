@@ -19,7 +19,7 @@ public class InfEqToSupEqProcessor extends ProcessorModel {
         if (!operator.getKind().equals(replaceThis)) return;
 
         CtMethod parent = operator.getParent(CtMethod.class);
-        if (parent!=null && parent.getSimpleName().equals("infeq2")) return;
+        if (parent!=null && !parent.getSimpleName().equals("infeq2")) return;
 
         // Replace
         operator.setKind(byThis);
