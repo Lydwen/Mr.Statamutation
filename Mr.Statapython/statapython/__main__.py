@@ -25,24 +25,28 @@ def main(args):
         # Go to project directory
         os.chdir(os.path.abspath(args.project))
 
-    # Clean the report directory
-    Logger.log('Pre-cleaning report directory "%s"' % args.report_directory, True)
-    pre_clean(args.report_directory)
+    # Check if Spoon need to be applied
+    if not args.disable_spoon:
+        # Clean the report directory
+        Logger.log('Pre-cleaning report directory "%s"' % args.report_directory, True)
+        pre_clean(args.report_directory)
 
-    # Create mutator tester, and execute original tests
-    mutator = MutationsTester(args.tests_directory, args.report_directory, not args.keep_temp)
-    mutator.process(args.original)
+        # Create mutator tester, and execute original tests
+        mutator = MutationsTester(args.tests_directory, args.report_directory, not args.keep_temp)
+        mutator.process(args.original)
 
-    # Execute mutations
-    mutator.process('BadassMutations',
-                    ('fr.polytech.devops.g1.stataspoon.processors.operators.binary.PlusToMinusProcessor',
-                     'fr.polytech.devops.g1.stataspoon.processors.operators.binary.InfEqToSupEqProcessor'))
+        # Execute mutations
+        mutator.process('BadassMutations',
+                        ('fr.polytech.devops.g1.stataspoon.processors.operators.binary.PlusToMinusProcessor',
+                         'fr.polytech.devops.g1.stataspoon.processors.operators.binary.InfEqToSupEqProcessor'))
 
-    # Compute reporting
-    report_file = os.path.join(args.report_directory, REPORT_FILENAME)
-    Logger.log('=============== Generating report ===============', True)
-    Reporting(args.report_directory, args.original).report(report_file)
-    Logger.log('Report accessible at: %s' % os.path.abspath(report_file))
+    # Check if report generation is enabled
+    if not args.disable_report:
+        # Compute reporting
+        report_file = os.path.join(args.report_directory, REPORT_FILENAME)
+        Logger.log('=============== Generating report ===============', True)
+        Reporting(args.report_directory, args.original).report(report_file)
+        Logger.log('Report accessible at: %s' % os.path.abspath(report_file))
 
 
 def pre_clean(directory):
@@ -93,7 +97,15 @@ def get_parser():
 
     parser.add_argument('-k', '--keep-temp',
                         help='enable/disable temporary file cleaning',
-                        default=False)
+                        action='store_true')
+
+    parser.add_argument('--disable-spoon',
+                        help='disable Spoon (only the report will be computed)',
+                        action='store_true')
+
+    parser.add_argument('--disable-report',
+                        help='disable report generation (only Spoon will be applied)',
+                        action='store_true')
     return parser
 
 
