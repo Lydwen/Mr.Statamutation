@@ -16,47 +16,67 @@
 
     <!-- Custom styles for this template -->
     <link href="tools/theme/css/main.css" rel="stylesheet">
-
-	<div class="row centered">
-		<p>DevOps - Group 01</p>
-	</div><!-- row -->
 	
   </head>
 
   <body>
+  <!-- Fixed navbar -->
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">DevOps - Group 01</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="active"><a href="#home"><i class="fa fa-home"></i></a></li>
+            <li><a href="#table"><i class="fa fa-tasks"></i> RESULTS</a></li>
+            <li><a href="#charts"><i class="fa fa-charts"></i> CHARTS</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
   
-	<div id="headerwrap">
-		<div class="container">
-			<div class="row centered">
-				<div class="col-lg-8 col-lg-offset-2">
-					<h1><b>StataMutator</b><br/>The best way to evolve</h1>
-				</div>
-			</div><!-- row -->
-		</div><!-- container -->
-	</div><!-- headerwrap -->
-	
-	<div class="col-lg-12">
-		<h1 class="centered"><i class="fa fa-tasks"></i> {{ title }}</h1>
-		<table>
-			{% for report in ([ base_report ] + mutations_reports) %}
-			<tr>
-				<td>{{ report.name }}</td>
+	<a name="home">
+		<div id="headerwrap">
+			<div class="container">
+				<div class="row centered">
+					<div class="col-lg-8 col-lg-offset-2" style="margin-top:50px;">
+						<h1><b>StataMutator</b><br/>The best way to evolve</h1>
+					</div>
+				</div><!-- row -->
+			</div><!-- container -->
+		</div><!-- headerwrap -->
+	</a>
+	<a name="table">
+		<div class="col-lg-12">
+			<h1 class="centered"><i class="fa fa-tasks"></i> {{ title }}</h1>
+			<table>
+				{% for report in ([ base_report ] + mutations_reports) %}
+				<tr>
+					<td>{{ report.name }}</td>
 
-				{% for key, value in report.counts | dictsort %}
-				<td>{{ key }} : {{ value }}</td>
+					{% for key, value in report.counts | dictsort %}
+					<td>{{ key }} : {{ value }}</td>
+					{% endfor %}
+
+					<td>{{ (report.counts['success'] / report.counts['tests'] * 100) | int }} &percnt;</td>
+				</tr>
 				{% endfor %}
-
-				<td>{{ (report.counts['success'] / report.counts['tests'] * 100) | int }} &percnt;</td>
-			</tr>
-			{% endfor %}
-		</table>
-		
-	</div>
+			</table>
+			
+		</div>
+	</a>
 	
-	<div class="col-lg-12">
-		<div id="chartContainer" class="chart"></div>
-	</div>
-
+	<a name="charts">
+		<div class="col-lg-12">
+			<div id="chartContainer" class="chart"></div>
+		</div>
+	</a>
 	
 	<!-- FOOTER -->
 	<div id="f">
