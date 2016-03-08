@@ -8,12 +8,10 @@ import sys
 from .statareport import Reporting
 from .stataspoon import MutationsTester
 from .statautils import Directory, Logger
+from .stataxml import ConfigParser
 
 """ Report filename """
 REPORT_FILENAME = 'statam_report.html'
-
-""" Neutral processor (original tests) """
-NEUTRAL_PROCESSOR = 'fr.polytech.devops.g1.stataspoon.processors.NeutralProcessor'
 
 
 def main(args):
@@ -31,14 +29,21 @@ def main(args):
         Logger.log('Pre-cleaning report directory "%s"' % args.report_directory, True)
         pre_clean(args.report_directory)
 
+        # Load the configuration
+        Logger.log('Load mutations configuration "%s"' % args.mutations_config, True)
+        mutations_config = ConfigParser.parse(args.mutations_config)
+
         # Create mutator tester, and execute original tests
         mutator = MutationsTester(args.tests_directory, args.report_directory, not args.keep_temp)
         mutator.process(args.original)
 
-        # Execute mutations
-        mutator.process('BadassMutations',
-                        ('fr.polytech.devops.g1.stataspoon.processors.operators.binary.PlusToMinusProcessor',
-                         'fr.polytech.devops.g1.stataspoon.processors.operators.binary.InfEqToSupEqProcessor'))
+        # Get all mutations
+        mutations = mutations_config['mutations']['mutation']
+        if not isinstance(mutations, (list, tuple)): mutations = (mutations,)  # Bind to list
+
+        # Execute every mutations
+        for mutation in mutations:
+            mutator.process(mutation['name'], mutation['processors']['processor'])
 
     # Check if report generation is enabled
     if not args.disable_report:
@@ -80,8 +85,9 @@ def get_parser():
     parser.add_argument('-p', '--project',
                         help='project main directory')
 
-    # parser.add_argument('-m', '--mutations',
-    #                    help='mutations configuration file')
+    parser.add_argument('-m', '--mutations-config',
+                        help='mutations configuration file',
+                        default='./statamutations.xml')
 
     parser.add_argument('-r', '--report-directory',
                         help='report output directory (generated report)',

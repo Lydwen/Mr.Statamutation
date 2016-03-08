@@ -53,6 +53,8 @@ class MutationsTester:
         :param processors: processor to apply
         :param selectors: selectors to apply
         """
+        if not isinstance(processors, (list, tuple)): processors = (processors,)  # Bind to list
+
         self.clean()
         Logger.log('========================== Mutation "%s" ==========================' % name,
                    True)

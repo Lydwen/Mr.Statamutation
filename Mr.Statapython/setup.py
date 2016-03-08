@@ -19,5 +19,5 @@ setup(
     package_data={
         'statapython.templates': ['report.html', 'tools.zip']
     },
-    install_requires=['Jinja2'],
+    install_requires=['Jinja2', 'xmltodict'],
 )
