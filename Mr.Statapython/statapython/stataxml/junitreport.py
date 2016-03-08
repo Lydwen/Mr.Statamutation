@@ -49,7 +49,7 @@ class JUnitReport:
         if os.path.isfile(os.path.join(directory, '.compilation_failed')):
             report.compilation_failed = True
         else:
-            # Get all files in the specified direction
+            # Get all files in the specified directory
             for file in os.listdir(directory):
                 # Check if the file is a test XML report file
                 if file.startswith('TEST-') and file.endswith('.xml'):
