@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<statam>
+	<mutations>
+		<mutation>
+			<name>Mutation PlusMinus</name>
+			<processors>
+				<processor>fr.polytech.devops.g1.stataspoon.processors.operators.binary.PlusToMinusProcessor</processor>
+			</processors>
+		</mutation>
+		<mutation>
+			<name>Mutation comparaisons</name>
+			<processors>
+				<processor>fr.polytech.devops.g1.stataspoon.processors.operators.binary.InfEqToSupEqProcessor</processor>
+				<processor>fr.polytech.devops.g1.stataspoon.processors.operators.binary.EqToIneqProcessor</processor>
+			</processors>
+		</mutation>
+	</mutations>
+</statam>
