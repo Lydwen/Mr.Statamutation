@@ -37,8 +37,12 @@ def main(args):
         mutator = MutationsTester(args.tests_directory, args.report_directory, not args.keep_temp)
         mutator.process(args.original)
 
+        # Get all mutations
+        mutations = mutations_config['mutations']['mutation']
+        if not isinstance(mutations, (list, tuple)): mutations = (mutations,)  # Bind to list
+
         # Execute every mutations
-        for mutation in mutations_config['mutations']['mutation']:
+        for mutation in mutations:
             mutator.process(mutation['name'], mutation['processors']['processor'])
 
     # Check if report generation is enabled
