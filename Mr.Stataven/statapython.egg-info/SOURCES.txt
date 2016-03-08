@@ -1,0 +1,5 @@
+statapython.egg-info/PKG-INFO
+statapython.egg-info/SOURCES.txt
+statapython.egg-info/dependency_links.txt
+statapython.egg-info/requires.txt
+statapython.egg-info/top_level.txt
