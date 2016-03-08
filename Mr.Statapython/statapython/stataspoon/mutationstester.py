@@ -62,7 +62,7 @@ class MutationsTester:
         pom_file = self.inject_processors(processors, CUSTOM_POM_FILENAME)
 
         # Prepare command to execute
-        command = 'mvn package -f "%s"' % pom_file
+        command = 'mvn tests -f "%s"' % pom_file
         Logger.log('Executing command: %s' % command, False, True)
 
         # Post-process results
