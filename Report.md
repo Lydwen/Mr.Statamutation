@@ -27,8 +27,10 @@ les axes suivants auraient pu, par exemple, être améliorés/implémentés :
 > Portabilité
 
 Le projet ne se base que sur des technologies qui sont multi-plateformes, à savoir :
-	- les langages Java et Python
-	- le framework Maven
+<ul>
+<li>les langages Java et Python</li>
+<li>le framework Maven</li>
+</ul>
 
 Par conséquent, notre projet est portable sur toutes les plateformes sur lesquelles ces technologies le sont.
 
