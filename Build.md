@@ -29,7 +29,7 @@ Puis, dans le dossier du projet, l'installer à l'aide de la commande :
 
 Félicitations, vous avez déployé le projet **Mr.Statamutation** sur votre machine.
 
-## 2. Configuration ##
+## 2. Configurations ##
 
 ### Configuration du projet à muter ###
 
@@ -67,7 +67,7 @@ Pour ce faire, il faut rajouter le code suivant dans le **pom.xml** :
 
 ### Configuration des mutations à appliquer ###
 
-Dans un second temps, il est nécassaire de configurer les mutations et sélécteurs associés, à appliquer à votre projet. \
+Dans un second temps, il est nécessaire de configurer les mutations et sélécteurs associés, à appliquer à votre projet. \
 Pour ce faire, il faut créer un fichier **statamutations.xml** à la racine de votre projet. Le fichier doit être de la forme suivante : 
 ~~~xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -85,7 +85,7 @@ Pour ce faire, il faut créer un fichier **statamutations.xml** à la racine de 
 				</parameters>
 			</selector>
 		</mutation>
-		<!-- Il est possible de configurer autant de mutations que voulus. -->
+		<!-- Il est possible de configurer autant de mutations que voulu. -->
 	</mutations>
 </statam>
 ~~~
@@ -100,7 +100,7 @@ Du moment que vous avez suivi les étapes précédentes, la chaine de build s'ex
 Le programme va alors appliquer les tests sur le projet original, puis effectuer chacune des mutations configurées et y appliquer les tests. \
 Un rapport est ensuite généré. L'ensemble des résultats est alors disponible dans le dossier **./target/statam-report/**.
 	
-Un certains nombre de paramètres sont disponibles, à savoir pour les plus importants :
+Un certain nombre de paramètres est disponible, à savoir pour les plus importants :
 - **--project** (**-p**) : Spécifie le dossier du projet à build.
 - **--mutations-config** (**-m**) : Spécifie le fichier de configuration des mutations à appliquer.
 
