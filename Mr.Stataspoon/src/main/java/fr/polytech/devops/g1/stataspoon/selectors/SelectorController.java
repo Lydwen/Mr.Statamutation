@@ -1,7 +1,9 @@
-package fr.polytech.devops.g1.stataspoon.selectors.selectors;
+package fr.polytech.devops.g1.stataspoon.selectors;
 
-import fr.polytech.devops.g1.stataspoon.selectors.Selectors;
 import fr.polytech.devops.g1.stataspoon.selectors.factory.FactorySelector;
+import fr.polytech.devops.g1.stataspoon.selectors.selectors.ISelector;
+import fr.polytech.devops.g1.stataspoon.selectors.selectors.SelectorAll;
+import fr.polytech.devops.g1.stataspoon.selectors.selectors.SelectorPercentOfClasses;
 
 import javax.xml.stream.XMLInputFactory;
 import javax.xml.stream.XMLStreamException;
@@ -70,10 +72,13 @@ public class SelectorController {
                     if(eventType== XMLEvent.END_ELEMENT && xmlsr.getLocalName().equals("parameters")){
                         break;
                     }else if(eventType == XMLEvent.START_ELEMENT){
-                        String localName = xmlsr.getLocalName();
-                        xmlsr.next();
+                        if(xmlsr.hasNext()) {
+                            String localName = xmlsr.getLocalName();
 
-                        parameters.put(localName,xmlsr.getText());
+                            xmlsr.next();
+
+                            parameters.put(localName, xmlsr.getText());
+                        }
                     }
                 }
             }

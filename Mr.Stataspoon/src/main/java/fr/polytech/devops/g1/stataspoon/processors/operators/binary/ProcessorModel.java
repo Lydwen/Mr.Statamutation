@@ -1,7 +1,7 @@
 package fr.polytech.devops.g1.stataspoon.processors.operators.binary;
 
 import fr.polytech.devops.g1.stataspoon.selectors.selectors.ISelector;
-import fr.polytech.devops.g1.stataspoon.selectors.selectors.SelectorController;
+import fr.polytech.devops.g1.stataspoon.selectors.SelectorController;
 import spoon.processing.AbstractProcessor;
 import spoon.reflect.code.BinaryOperatorKind;
 import spoon.reflect.code.CtBinaryOperator;
