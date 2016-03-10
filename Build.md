@@ -23,7 +23,7 @@ Puis, dans le dossier du projet, l'installer à l'aide de la commande :
 L'exécution de la chaine de build s'effectue grâce à un module Python. Pour les mêmes raisons que **Mr.Stataspoon**
 (à savoir que le projet n'est pas en ligne sur un repository officiel Python), il est nécessaire de l'installer manuellement sur la machine.
 
-Pour ce faire, il faut récupérer le projet suivant (on commence à avoir l'habitude) : [Mr.Statapython](./Mr.Statapython/).
+Pour ce faire, il faut récupérer le projet [Mr.Statapython](./Mr.Statapython/) (on commence à avoir l'habitude..).
 
 Puis, dans le dossier du projet, l'installer à l'aide de la commande :
 ~~~shell
