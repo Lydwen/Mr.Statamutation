@@ -6,6 +6,12 @@
 			<processors>
 				<processor>fr.polytech.devops.g1.stataspoon.processors.operators.binary.PlusToMinusProcessor</processor>
 			</processors>
+			<selector name="percent of classes">
+				<parameters>
+					<percent>30.28</percent>
+					<poutre>machin</poutre>
+				</parameters>
+			</selector>
 		</mutation>
 		<mutation>
 			<name>Mutation comparaisons</name>
@@ -13,11 +19,6 @@
 				<processor>fr.polytech.devops.g1.stataspoon.processors.operators.binary.InfEqToSupEqProcessor</processor>
 				<processor>fr.polytech.devops.g1.stataspoon.processors.operators.binary.EqToIneqProcessor</processor>
 			</processors>
-			<selector name="PercentClass">
-				<parameters>
-					<percent>30</percent>
-				</parameters>
-			</selector>
 		</mutation>
 	</mutations>
 </statam>

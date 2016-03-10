@@ -14,7 +14,6 @@ public class FactorySelectorPercentOfClasses implements FactorySelector{
     public ISelector createSelector(Map<String,String> params){
         String percentString = params.get("percent");
         double percent = Double.valueOf(params.get("percent"));
-        System.out.println("on va créer un SelectorPercentOfClasses avec "+percent/100+"%");
         return new SelectorPercentOfClasses(percent/100);
     }
 }

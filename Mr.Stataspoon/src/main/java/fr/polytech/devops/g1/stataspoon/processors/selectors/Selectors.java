@@ -19,8 +19,9 @@ public enum Selectors {
 
     public static FactorySelector getFactory(String name){
         for(Selectors s : Selectors.values()){
-            if(s.getName().equals(name))
+            if(s.getName().equals(name)) {
                 return s.getFactory();
+            }
         }
         return null;
     }

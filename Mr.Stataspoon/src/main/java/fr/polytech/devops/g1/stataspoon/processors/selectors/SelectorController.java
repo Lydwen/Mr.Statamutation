@@ -19,7 +19,6 @@ public class SelectorController {
     private static SelectorController _instance;
 
     private SelectorController(){
-        System.out.println("COUCOU=================================================");
         selector = new SelectorPercentOfClasses();
         XMLInputFactory xmlif = XMLInputFactory.newInstance();
         try {
@@ -28,15 +27,12 @@ public class SelectorController {
             while(xmlsr.hasNext()){
                 eventType = xmlsr.next();
                 if(eventType== XMLEvent.START_ELEMENT){
-                    System.out.println("ELEM : "+xmlsr.getLocalName());
                     if(xmlsr.getLocalName().equals("selector")){
-                        System.out.println("SELECTOR");
 
                         String selectorName = xmlsr.getAttributeValue(null, "name");
                         Map<String, String> parameters = getParameters(xmlsr);
 
                         if(Selectors.isSelector(selectorName)) {
-                            System.out.println("WE HAVE A NAME" + selectorName);
                             FactorySelector factory = Selectors.getFactory(selectorName);
                             selector = factory.createSelector(parameters);
                         }
@@ -51,10 +47,8 @@ public class SelectorController {
         }
 
         if(selector==null){
-            System.out.println("WE HAVENT ANY SELECTOR");
             selector = new SelectorPercentOfClasses();
         }
-        System.out.println("END==============================================");
 
     }
 
@@ -64,12 +58,20 @@ public class SelectorController {
         while(xmlsr.hasNext()){
             eventType = xmlsr.next();
             if(eventType== XMLEvent.END_ELEMENT && xmlsr.getLocalName().equals("selector")){
-                System.out.println("ON QUITTE SELECTOR");
                 break;
             }
-            if(eventType == XMLEvent.START_ELEMENT){
-                System.out.println(xmlsr.getLocalName()+"\n"+xmlsr.getText());
-                parameters.put(xmlsr.getLocalName(),xmlsr.getText());
+            if(eventType == XMLEvent.START_ELEMENT && xmlsr.getLocalName().equals("parameters")){
+                while(xmlsr.hasNext()){
+                    eventType = xmlsr.next();
+                    if(eventType== XMLEvent.END_ELEMENT && xmlsr.getLocalName().equals("parameters")){
+                        break;
+                    }else if(eventType == XMLEvent.START_ELEMENT){
+                        String localName = xmlsr.getLocalName();
+                        xmlsr.next();
+
+                        parameters.put(localName,xmlsr.getText());
+                    }
+                }
             }
         }
         return parameters;
