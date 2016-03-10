@@ -36,8 +36,7 @@ Par conséquent, notre projet est portable sur toutes les plateformes sur lesque
 > Utilisation facile
 
 L'ensemble de l'éxécution de la chaine de build s'effectue par l'appel d'une simple commande.
-
-De plus, les configurations sont effectués grâce à des fichiers XML (langage human-readable), et par conséquent simples de compréhension.
+De plus, les configurations sont effectuées grâce à des fichiers XML (langage human-readable), et par conséquent simples d'utilisation et de compréhension.
 
 
 > Installation rapide 
@@ -45,8 +44,8 @@ De plus, les configurations sont effectués grâce à des fichiers XML (langage 
 L'installation est relativement facile et rapide. Il est juste nécéssaire de récupérer les projets, ces derniers s'installent en 2 commandes.
 Aussi, le script setup.py permet l'installation de différents composants tels que les frameworks Bootstrap et Highcharts utiles à la création du rapport HTML. 
 
-
 Pour plus de détails, voir le fichier [Build.md](./Build.md).
+
 
 > Rapport HTML
 	
