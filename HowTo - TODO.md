@@ -36,5 +36,13 @@ III. AJOUTER UN SELECTEUR
 xxx
 
 
+IV. CONFIGURER SPOON
+
+XXX
+
+V. CONFIGURER MAVEN
+
+XXX
+
 NB : la commande "python" peut correspondre à la commande "py" selon votre
 version de Python.
