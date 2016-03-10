@@ -1,6 +1,7 @@
 import os
 
 from .junitxmlreader import JUnitXMLReader
+from ..statautils import Directory
 
 """ Tests suites counts type """
 COUNTS_TYPES = ['tests', 'failures', 'errors', 'skipped']
@@ -46,7 +47,7 @@ class JUnitReport:
         report = JUnitReport(name)
 
         # Check if compilation was not a failure
-        if os.path.isfile(os.path.join(directory, '.compilation_failed')):
+        if Directory.file_exists(os.path.join(directory, '.compilation_failed')):
             report.compilation_failed = True
         else:
             # Get all files in the specified directory
