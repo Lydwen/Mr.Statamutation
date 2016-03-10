@@ -1,14 +1,10 @@
 package fr.polytech.devops.g1.stataspoon.processors.operators.binary;
 
-import fr.polytech.devops.g1.stataspoon.processors.selectors.ISelector;
-import fr.polytech.devops.g1.stataspoon.processors.selectors.SelectorController;
+import fr.polytech.devops.g1.stataspoon.selectors.selectors.ISelector;
+import fr.polytech.devops.g1.stataspoon.selectors.selectors.SelectorController;
 import spoon.processing.AbstractProcessor;
 import spoon.reflect.code.BinaryOperatorKind;
 import spoon.reflect.code.CtBinaryOperator;
-import spoon.reflect.declaration.CtClass;
-
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
 
 /**
  * Processor Model.
