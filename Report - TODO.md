@@ -23,25 +23,25 @@ application en :
 
 ### Points positifs ###
 
-		a. Portabilité
+a. Portabilité
 
 - Python 
 - Java 
 
 	
-		b. Facile à utiliser
+b. Facile à utiliser
 
 - Une commande et basta
 	
 	
-		c. Installeur 
+c. Installeur 
 
 Tous les outils nécessaires au 
 fonctionnement du programme  sont compressés dans des archives. 
 L'installeur setup.py permet de XXX.
 	
 	
-		d. Rapport HTML
+d. Rapport HTML
 	
 Le rapport inclut les résultats des tests de toutes les mutations.
 Il permet l'identification des tests qui ont échoué pour toute les
@@ -53,7 +53,7 @@ compréhension des résultats
 
 ### Points négatifs ###
 
-		a. Rapport HTML
+a. Rapport HTML
 
 Le rapport affiche la liste des mutations qui ont un pourcentage de 
 tests réussi supérieur ou égal au pourcentage de tests de la version 
@@ -64,7 +64,7 @@ De plus, le fichier HTML n'est pas facile à modifier, en raison de
 l'utilisation de Jinja qui permet d'injecter du code.
 
 
-		b. Temps d'exécution
+b. Temps d'exécution
 	
 Le programme peut devenir très lent pour un nombre important de mutations
 et de tests. Le parallèlisme aurait pu être utilisé en lançant chaque
