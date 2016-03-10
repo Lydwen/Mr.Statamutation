@@ -7,6 +7,9 @@ import spoon.reflect.code.BinaryOperatorKind;
 import spoon.reflect.code.CtBinaryOperator;
 import spoon.reflect.declaration.CtClass;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
 /**
  * Processor Model.
  *
@@ -28,8 +31,7 @@ public abstract class ProcessorModel extends AbstractProcessor<CtBinaryOperator>
 
     @Override
     public void process(CtBinaryOperator op) {
-        CtClass parent = op.getParent(CtClass.class);
-        if(selector.isSelected(parent.getQualifiedName())){
+        if(selector.isSelected(op)){
             // Find
             if (!op.getKind().equals(replaceThis)) return;
 
