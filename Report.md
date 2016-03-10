@@ -11,12 +11,12 @@ Nous pensons avoir bien travaillé puisque nous sommes parvenus
 à réaliser une application fonctionnelle qui répond aux
 besoins énoncé par le probleme.
 
-Cependant, avec plus de temps, nous aurions pu améliorer notre
-application en :
-- implémenter plus de processeurs
-- implémenter plus de sélecteurs
-- paralléliser les processus de test
-- améliorer le détails du rapport
+Plusieurs pistes d'améliorations sont possibles. Avec plus de temps (ne jamais négliger le prochain sprint !), 
+les axes suivants auraient pu, par exemple, être améliorés/implémentés :
+- plus de processeurs
+- plus de sélecteurs
+- améliorer le rapport (graphiques présentés, détails par mutations, etc.)
+- paralélliser la chaine de build (plusieurs mutations en même temps)
 
 
 ## Analyse du programme ##
@@ -25,22 +25,24 @@ application en :
 
 > Portabilité
 
-- Python 
-- Java 
+Le projet ne se base que sur des technologies qui sont multi-plateformes, à savoir :
+	- les langages Java et Python
+	- le framework Maven
+
+Par conséquent, notre projet est portable sur plusieurs toutes les plateformes sur lesquelles ces technologies le sont.
 
 	
 > Facile à utiliser
 
-- Une commande et basta
-	
-	
-> Installeur 
+L'ensemble de l'éxécution de la chaine de build s'effectue par l'appel d'une simple commande.
 
-Tous les outils nécessaires au 
-fonctionnement du programme  sont compressés dans des archives. 
-L'installeur setup.py permet de XXX.
-	
-	
+De plus, les configurations sont effectués grâce à des fichiers XML (langage human-readable), et par conséquent simples de compréhension.
+
+
+> Installation rapide 
+
+...
+
 > Rapport HTML
 	
 Le rapport inclut les résultats des tests de toutes les mutations.
