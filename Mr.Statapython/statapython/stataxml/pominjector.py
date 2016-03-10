@@ -35,15 +35,18 @@ class PomInjector:
         Inject selectors in the current loaded pom.
         :param selectors: selectors to inject
         """
-        # Select <selectors> node
-        xml_selectors = self.select_selectors_element(
-            self.select_plugin_element()
-        )
+        # Select <configuration> node
+        config = self.select_plugin_element().find('./configuration')
 
         # Append selectors
         for selector in selectors:
-            xml_selector = Xml.SubElement(xml_selectors, 'selector', {'name': selector['@name']})
-            xml_selector.text = selector['#text']
+            xml_selector = Xml.SubElement(config, 'selector', {'name': selector['@name']})
+            xml_parameters = Xml.SubElement(xml_selector, 'parameters')
+
+            # Append selector parameters
+            for key, value in selector.get('parameters', {}).items():
+                xml_parameter = Xml.SubElement(xml_parameters, key)
+                xml_parameter.text = value
 
     def select_plugin_element(self):
         """
@@ -76,23 +79,6 @@ class PomInjector:
         if processors is None: processors = Xml.SubElement(config, 'processors')
 
         return processors
-
-    def select_selectors_element(self, plugin):
-        """
-        Select configuration of the plugin element.
-        :param plugin: plugin element
-        :return: selectors configuration
-        """
-        if plugin is None: return None
-
-        # Get <configuration> node
-        config = plugin.find('./configuration', NS)
-
-        # Get or create <selectors> node
-        selectors = config.find('./mvn:selectors', NS)
-        if selectors is None: selectors = Xml.SubElement(config, 'selectors')
-
-        return selectors
 
     def save(self, custom_pom):
         """

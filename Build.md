@@ -79,13 +79,11 @@ Pour ce faire, il faut créer un fichier **statamutations.xml** à la racine de 
 				<processor>fr.polytech.devops.g1.stataspoon.processors.operators.binary.InfEqToSupEqProcessor</processor>
 				<processor>fr.polytech.devops.g1.stataspoon.processors.operators.binary.EqToIneqProcessor</processor>
 			</processors>
-			<selectors>
-				<selector name="PercentClass">
-					<parameters>
-						<percent>30</percent>
-					</parameters>
-				</selector>
-			</selectors>
+			<selector name="PercentClass">
+				<parameters>
+					<percent>30</percent>
+				</parameters>
+			</selector>
 		</mutation>
 		<!-- Il est possible de configurer autant de mutations que voulus. -->
 	</mutations>
