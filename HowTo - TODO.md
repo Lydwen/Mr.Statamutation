@@ -1,39 +1,40 @@
 # STATAMUTATION #
 
 #################
-#    TUTORIAL   #
+#    TUTORIEL   #
 #################
 
 I. CONFIGURATION & EXECUTION
 
-	1. Preparing Spoon
+	1. Préparer Spoon
 
 cd ./Mr.Stataspoon
 mvn install
 	
-	2. Unpackage tools program
+	2. Installer les outils
 	
 cd ./Mr.Statapython
 python setup.py install -o
 
 
-	3. Launch program
+	3. Lancer le programme
 	
 cd ./Mr.Statapython
 python -m statapython -p ../Mr.Stataven
-(add '-o' to open the final report)
+(ajouter '-o' pour ouvrir le rapport avec le navigateur par défaut)
 
-/!\ The HTML report is in Mr.Stataven\target\statam-report
-
-
-II. ADD A PROCESSOR
-
-xxx
+/!\ Le rapport HTML se trouve dans Mr.Stataven\target\statam-report
 
 
-III. ADD A SELECTOR
+II. AJOUTER UN PROCESSEUR
 
 xxx
 
 
-NB : python command can be used with "py" alias according to your python configuration
+III. AJOUTER UN SELECTEUR
+
+xxx
+
+
+NB : la commande "python" peut correspondre à la commande "py" selon votre
+version de Python.

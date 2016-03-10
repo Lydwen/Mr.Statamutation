@@ -1,7 +1,7 @@
 # STATAMUTATION #
 
 #################
-#     REPORT    #
+#     RAPPORT    #
 #################
 
 I. FEEDBACK
