@@ -47,7 +47,7 @@ De plus, les configurations sont effectuées grâce à des fichiers XML (langage
 > Installation rapide 
 
 L'installation est relativement facile et rapide. Il est juste nécéssaire de récupérer les projets, ces derniers s'installent en 2 commandes.
-Aussi, le script setup.py permet l'installation de différents composants tels que les frameworks Bootstrap et Highcharts utiles à la création du rapport HTML. 
+Aussi, le script setup.py permet l'installation de différents composants tels que les frameworks Bootstrap et Hightcharts utiles à la création du rapport HTML. 
 
 Pour plus de détails, voir le fichier [Build.md](./Build.md).
 
