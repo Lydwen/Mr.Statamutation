@@ -10,7 +10,7 @@ So, if you have just a few mutants that doesn't produce a fail, you can be more 
 
 ## What is Mr.Statamutation?
 
-It's a framework to automate the process of creating a set of mutants, run the tests for each of them, and generate a HTML Report with all the results.
+It's a framework to automate the process of creating a set of mutants, run the tests for each of them and generate a HTML Report with all the results.
 
 ## Why "Mr.Statamutation"?
 
