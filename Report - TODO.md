@@ -1,10 +1,6 @@
-# STATAMUTATION #
+# Mr.Statamutation :: Rapport#
 
-#################
-#     RAPPORT    #
-#################
-
-I. FEEDBACK
+## Feedback ##
 	
 Ce projet a permis de comprendre la modification de code avec 
 Spoon et de nous familiariser davantage avec Maven. 
@@ -23,9 +19,9 @@ application en :
 - améliorer le détails du rapport
 
 
-II. ANALYSE DU PROGRAMME
+## Analyse du programme ##
 
-	1. Points positifs du programme
+### Points positifs ###
 
 		a. Portabilité
 
@@ -55,7 +51,7 @@ Le rapport est élégant et dispose de graphiques qui facilitent la
 compréhension des résultats
 
 
-	2. Points négatifs
+### Points négatifs ###
 
 		a. Rapport HTML
 
