@@ -28,9 +28,11 @@ les axes suivants auraient pu, par exemple, être améliorés/implémentés :
 
 Le projet ne se base que sur des technologies qui sont multi-plateformes, à savoir :
 <ul>
-<li>les langages Java et Python</li>
+<li>les langages Java, Python et HTML</li>
 <li>le framework Maven</li>
 <li>le framework Spoon</li>
+<li>le framework Bootstrap</li>
+<li>le framework HightCharts</li>
 </ul>
 
 Par conséquent, notre projet est portable sur toutes les plateformes sur lesquelles ces technologies le sont.
