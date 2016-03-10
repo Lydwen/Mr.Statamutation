@@ -121,7 +121,14 @@
 						<h4 class="modal-title">{{ report.name }}</h4>
 					  </div>
 					  <div class="modal-body">
-						<div id="container{{id}}" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+						<p>Failed tests:</p>
+						{% for ts in report.testsuites %}
+							{% for tc in ts['testcases'] %}
+								{% if ( (tc['status'] == 'failure') or (tc['status'] == 'error') ) %}
+									<p><i class="fa fa-minus"></i> {{tc['name']}}</p>
+								{% endif %}
+							{% endfor %}
+						{% endfor %}
 					  </div>
 					  <div class="modal-footer">
 						<button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fa fa-times"></i></button>
