@@ -5,6 +5,11 @@
 #################
 
 Advantages :
-- Compatible toute plateforme
-- Simple d'utilisation
+- Great compatibility
+- Easy to use
+- Compressed framework
 
+
+Drawbacks :
+- 
+- 
