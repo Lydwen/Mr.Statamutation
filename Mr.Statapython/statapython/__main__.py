@@ -4,6 +4,7 @@
 import argparse
 import os
 import sys
+import webbrowser
 
 from .statareport import Reporting
 from .stataspoon import MutationsTester
@@ -49,9 +50,15 @@ def main(args):
     if not args.disable_report:
         # Compute reporting
         report_file = os.path.join(args.report_directory, REPORT_FILENAME)
+        report_abspath = os.path.abspath(report_file)
         Logger.log('=============== Generating report ===============', True)
         Reporting(args.report_directory, args.original).report(report_file)
-        Logger.log('Report accessible at: %s' % os.path.abspath(report_file))
+        Logger.log('Report accessible at: %s' % report_abspath)
+
+        # Open in browser if asked to
+        if args.open_browser:
+            Logger.log('Opening report file in browser...')
+            webbrowser.open(report_abspath)
 
 
 def pre_clean(directory):
@@ -103,6 +110,10 @@ def get_parser():
 
     parser.add_argument('-k', '--keep-temp',
                         help='enable/disable temporary file cleaning',
+                        action='store_true')
+
+    parser.add_argument('-o', '--open-browser',
+                        help='open the report file in the default browser after generation',
                         action='store_true')
 
     parser.add_argument('--disable-spoon',
