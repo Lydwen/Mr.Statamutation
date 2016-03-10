@@ -13,6 +13,11 @@
 				<processor>fr.polytech.devops.g1.stataspoon.processors.operators.binary.InfEqToSupEqProcessor</processor>
 				<processor>fr.polytech.devops.g1.stataspoon.processors.operators.binary.EqToIneqProcessor</processor>
 			</processors>
+			<selector name="PercentClass">
+				<parameters>
+					<percent>30</percent>
+				</parameters>
+			</selector>
 		</mutation>
 	</mutations>
 </statam>
