@@ -69,13 +69,20 @@ Pour ce faire, il faut créer un fichier **statamutations.xml** à la racine de 
 
 Vous pouvez ajouter autant de processeur (<processor>) que vous le souhaitez, mais seulement un seul selecteur (<selector>).
 Voici la liste des processeurs existants (il faut ajouter fr.polytech.devops.g1.stataspoon.processors devant chacun) :
-	- operators.binary.AndToOrProcessor	: Remplace les && par des ||
-	- operators.binary.EqToIneqProcessor	: Remplace les == par des !=
-	- operators.binary.InfEqToSupEqProcessor: Remplace les <= par des >=
-	- operators.binary.InfToSupProcessor	: Remplace les <  par des >
-	- operators.binary.PlusToMinusProcessor : Remplace les +  par des -
-	- NeutralProcessor			: ne fait rien
-
+<ul>	<li>operators.binary.AndToOrProcessor	: Remplace les && par des ||</li>
+	<li>operators.binary.EqToIneqProcessor	: Remplace les == par des !=</li>
+	<li>operators.binary.InfEqToSupEqProcessor: Remplace les <= par des >=</li>
+	<li>operators.binary.InfToSupProcessor	: Remplace les <  par des ></li>
+	<li>operators.binary.PlusToMinusProcessor : Remplace les +  par des -</li>
+	<li>NeutralProcessor			: ne fait rien</li>
+</ul>
+Voici la liste des sélecteurs existants avec leurs paramètres :
+<ul>
+	<li>percent of classes	: mute un pourcentage défini de classe	: il faut ajouter une balise <percent> </percent> avec le pourcentage de classe voulu (voir dans l'exemple au dessus)</li>
+	<li>percent of all	: mute selon un pourcentage défini 	: il faut ajouter une balise <percent> </percent> avec le pourcentage de chance voulu</li>
+	<li>random		: 50% de chance de faire muter</li>
+	<li> all		: fait tout muter</li>
+</ul>
 ## 3. Exécution ##
 
 Du moment que vous avez suivi les étapes précédentes, la chaine de build s'exécute avec une simple commande, dans le dossier du projet :
