@@ -32,7 +32,7 @@ Le projet ne se base que sur des technologies qui sont multi-plateformes, à sav
 Par conséquent, notre projet est portable sur plusieurs toutes les plateformes sur lesquelles ces technologies le sont.
 
 	
-> Facile à utiliser
+> Utilisation facile
 
 L'ensemble de l'éxécution de la chaine de build s'effectue par l'appel d'une simple commande.
 
