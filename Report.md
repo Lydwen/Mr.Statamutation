@@ -41,7 +41,8 @@ De plus, les configurations sont effectués grâce à des fichiers XML (langage 
 
 > Installation rapide 
 
-...
+Le programme setup.py permet l'installation de différents composants tels que les framework Bootstrap et Highcharts utiles à la création du rapport HTML. 
+
 
 > Rapport HTML
 	
