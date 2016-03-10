@@ -30,7 +30,7 @@ Le projet ne se base que sur des technologies qui sont multi-plateformes, à sav
 	- les langages Java et Python
 	- le framework Maven
 
-Par conséquent, notre projet est portable sur plusieurs toutes les plateformes sur lesquelles ces technologies le sont.
+Par conséquent, notre projet est portable sur toutes les plateformes sur lesquelles ces technologies le sont.
 
 	
 > Utilisation facile
@@ -43,6 +43,8 @@ De plus, les configurations sont effectués grâce à des fichiers XML (langage 
 > Installation rapide 
 
 L'installation est relativement facile et rapide. Il est juste nécéssaire de récupérer les projets, ces derniers s'installent en 2 commandes.
+Aussi, le script setup.py permet l'installation de différents composants tels que les frameworks Bootstrap et Highcharts utiles à la création du rapport HTML. 
+
 
 Pour plus de détails, voir le fichier [Build.md](./Build.md).
 
