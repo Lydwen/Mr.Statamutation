@@ -34,7 +34,7 @@ class JUnitXMLReader:
             # Error
             elif len(errors) > 0:
                 testcase['status'] = 'error'
-                testcase['message'] = errors[0].attrib['message']
+                testcase['message'] = errors[0].attrib.get('message', None)
             # Success
             else:
                 testcase['status'] = 'success'
