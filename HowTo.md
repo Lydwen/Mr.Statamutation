@@ -95,7 +95,7 @@ Le programme va alors appliquer les tests sur le projet original, puis effectuer
 Un rapport est ensuite généré. L'ensemble des résultats est alors disponible dans le dossier **./target/statam-report/**.
 	
 Un certain nombre de paramètres est disponible, à savoir pour les plus importants :
-- **--project** (**-p**) : Spécifie le dossier du projet à build.
-- **--mutations-config** (**-m**) : Spécifie le fichier de configuration des mutations à appliquer.
+- **--project** (**-p**) : Spécifie le dossier du projet à build (le dossier où se trouve le pom.xml et le fichier statamutations.xml).
+- **--mutations-config** (**-m**) : Spécifie le fichier de configuration des mutations à appliquer (statapython si vous vous trouvez dans le dossier Mr.Statapython).
 
 Pour avoir un détail complet des options : **--help** (**-h**)
