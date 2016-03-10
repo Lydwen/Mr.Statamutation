@@ -17,6 +17,7 @@ les axes suivants auraient pu, par exemple, être améliorés/implémentés :
 - plus de sélecteurs
 - améliorer le rapport (graphiques présentés, détails par mutations, etc.)
 - paralélliser la chaine de build (plusieurs mutations en même temps)
+- script de déploiement du framework
 
 
 ## Analyse du programme ##
@@ -41,8 +42,9 @@ De plus, les configurations sont effectués grâce à des fichiers XML (langage 
 
 > Installation rapide 
 
-Le programme setup.py permet l'installation de différents composants tels que les framework Bootstrap et Highcharts utiles à la création du rapport HTML. 
+L'installation est relativement facile et rapide. Il est juste nécéssaire de récupérer les projets, ces derniers s'installent en 2 commandes.
 
+Pour plus de détails, voir le fichier [Build.md](./Build.md).
 
 > Rapport HTML
 	
