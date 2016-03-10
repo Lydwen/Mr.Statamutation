@@ -28,8 +28,11 @@ les axes suivants auraient pu, par exemple, être améliorés/implémentés :
 
 Le projet ne se base que sur des technologies qui sont multi-plateformes, à savoir :
 <ul>
-<li>les langages Java et Python</li>
+<li>les langages Java, Python et HTML</li>
 <li>le framework Maven</li>
+<li>le framework Spoon</li>
+<li>le framework Bootstrap</li>
+<li>le framework HightCharts</li>
 </ul>
 
 Par conséquent, notre projet est portable sur toutes les plateformes sur lesquelles ces technologies le sont.
@@ -44,7 +47,7 @@ De plus, les configurations sont effectuées grâce à des fichiers XML (langage
 > Installation rapide 
 
 L'installation est relativement facile et rapide. Il est juste nécéssaire de récupérer les projets, ces derniers s'installent en 2 commandes.
-Aussi, le script setup.py permet l'installation de différents composants tels que les frameworks Bootstrap et Highcharts utiles à la création du rapport HTML. 
+Aussi, le script setup.py permet l'installation de différents composants tels que les frameworks Bootstrap et Hightcharts utiles à la création du rapport HTML. 
 
 Pour plus de détails, voir le fichier [Build.md](./Build.md).
 
@@ -52,7 +55,7 @@ Pour plus de détails, voir le fichier [Build.md](./Build.md).
 > Rapport HTML
 	
 Le rapport inclut les résultats des tests de toutes les mutations.
-Il permet l'identification des tests qui ont échoué pour toute les
+Il permet l'identification des tests qui ont échoué pour toutes les
 mutations.
 
 Le rapport est élégant et dispose de graphiques qui facilitent la
