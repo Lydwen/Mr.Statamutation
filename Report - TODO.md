@@ -11,8 +11,16 @@ Spoon et de nous familiariser davantage avec Maven.
 Il a également permis de raviver nos connaissances du language
 Python.
 
-- Manque de temps pour réaliser quelque chose de complet
-- Beaucoup de problèmes avec Python #Antoine
+Nous pensons avoir bien travaillé puisque nous sommes parvenus
+à réaliser une application fonctionnelle qui répond aux
+besoins énoncé par le probleme.
+
+Cependant, avec plus de temps, nous aurions pu améliorer notre
+application en :
+- implémenter plus de processeurs
+- implémenter plus de sélecteurs
+- paralléliser les processus de test
+- améliorer le détails du rapport
 
 
 II. ANALYSE DU PROGRAMME
@@ -32,7 +40,7 @@ II. ANALYSE DU PROGRAMME
 	
 		c. Installeur 
 
-Tous les outils nécessaires (bootstrap, highcharts, etc..) au 
+Tous les outils nécessaires au 
 fonctionnement du programme  sont compressés dans des archives. 
 L'installeur setup.py permet de XXX.
 	
