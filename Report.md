@@ -55,7 +55,7 @@ Pour plus de détails, voir le fichier [Build.md](./Build.md).
 > Rapport HTML
 	
 Le rapport inclut les résultats des tests de toutes les mutations.
-Il permet l'identification des tests qui ont échoué pour toute les
+Il permet l'identification des tests qui ont échoué pour toutes les
 mutations.
 
 Le rapport est élégant et dispose de graphiques qui facilitent la
