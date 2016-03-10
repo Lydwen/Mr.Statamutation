@@ -30,6 +30,7 @@ Le projet ne se base que sur des technologies qui sont multi-plateformes, à sav
 <ul>
 <li>les langages Java et Python</li>
 <li>le framework Maven</li>
+<li>le framework Spoon</li>
 </ul>
 
 Par conséquent, notre projet est portable sur toutes les plateformes sur lesquelles ces technologies le sont.
