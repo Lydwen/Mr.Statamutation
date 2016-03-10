@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 {# ============= Pre-template calculations ============= #}
 {% set original = 0 %}
+{% set original_save = [] %}
+{% set original_save_name = [] %}
 {% set alive = [-1] %}
 {% set stillborn = [0] %}
 {% set dead = [0] %}
@@ -13,6 +15,8 @@
 		{% set tmp = (report.counts['success'] / report.counts['tests'] * 100) %}
 		{% if (bool == 0) %}
 			{% set original = tmp %}
+			{% if original_save.append(tmp) %}{% endif %}
+			{% if original_save_name.append(report.name) %}{% endif %}
 			{% set bool = 1 %}
 		{% endif %}
 		{% if (bool == 1) %}
@@ -138,52 +142,30 @@
 				  </div>
 				</div>
 				
-				<script>
-					$(function () {
-						$('#container{{id}}').highcharts({
-							chart: {
-								type: 'column'
-							},
-							title: {
-								text: 'Stacked column chart'
-							},
-							xAxis: {
-								categories: ['Apples', 'Oranges', 'Pears', 'Grapes', 'Bananas']
-							},
-							yAxis: {
-								min: 0,
-								title: {
-									text: 'Total fruit consumption'
-								}
-							},
-							tooltip: {
-								pointFormat: '<span style="color:{series.color}">{series.name}</span>: <b>{point.y}</b> ({point.percentage:.0f}%)<br/>',
-								shared: true
-							},
-							plotOptions: {
-								column: {
-									stacking: 'percent'
-								}
-							},
-							series: [{
-								name: 'John',
-								data: [5, 3, 4, 7, 2]
-							}, {
-								name: 'Jane',
-								data: [2, 2, 3, 2, 1]
-							}, {
-								name: 'Joe',
-								data: [3, 4, 4, 2, 5]
-							}]
-						});
-					});
-				</script>
-				
 				{% set id = id + 1 %}
 			{% endfor %}
 				
 				
 			</table>
+			
+			<h3 class="centered">Alived Mutations</h3>
+			<table class="col-lg-12">
+			{% set base = original_save.pop() %}
+			{% set base_name = original_save_name.pop() %}
+			{% for report in ([ base_report ] + mutations_reports) %}
+				{% set tmp = (report.counts['success'] / report.counts['tests'] * 100) %}
+				{% if ((tmp >= base) and (report.name != base_name)) %}
+					<tr>
+						<td>{{ report.name }}</td>
+						<td>{{ tmp }} &percnt;</td>
+					</tr>
+				{% endif %}				
+			{% endfor %}
+				
+				
+			</table>
+			
+			
 		</div>
 	</div>
 
