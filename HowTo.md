@@ -2,7 +2,7 @@
 
 ## 1. Installation ##
 
-Voir le fichier **Build.md**.
+Voir le fichier [./Build.md].
 
 ## 2. Configuration ##
 
