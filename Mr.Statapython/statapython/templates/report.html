@@ -136,43 +136,47 @@
 					renderTo: 'chartContainer',
 					type: 'column',
 				},
-
 				title: {
-					text: 'Percent of Test Coverage by Mutations'
+					text: 'Percent of tests succeeded/failed by mutations'
 				},
-
 				xAxis: {
 					/*categories: ['Mutation n°1', 'Mutation n°2', 'Mutation n°3', 'Mutation n°4']*/
 					categories: [ {% for report in mutations_reports %} '{{ report.name }}', {% endfor %} ],
 				},
-
 				yAxis: {
 					allowDecimals: false,
 					min: 0,
 					max: 100,
 					title: {
-						text: 'Mutatation Test Coverage (%)'
+						text: 'Success/Fails percents (%)'
 					}
 				},
-
 				tooltip: {
 					headerFormat: '<b>{point.key}</b><br>',
 					pointFormat: '<span style="color:{series.color}">\u25CF</span> {series.name}: {point.y} / 100'
 				},
-
 				plotOptions: {
 					column: {
 						stacking: 'normal',
 						depth: 40
 					}
 				},
-
 				series: [{
-					name: ' ',
+					name: 'Success',
 					/*data: [20, 40, 60, 80],*/
 					data: [ 
 						{% for report in mutations_reports %}
 							{{ (report.counts['success'] / report.counts['tests'] * 100) | int }},
+						{% endfor %}
+					],
+					stack: 'comp'
+				},
+				{
+					name: 'Fails (failures + errors)',
+					/*data: [20, 40, 60, 80],*/
+					data: [
+						{% for report in mutations_reports %}
+							{{ ((report.counts['failures'] + report.counts['errors']) / report.counts['tests'] * 100) | int }},
 						{% endfor %}
 					],
 					stack: 'comp'
