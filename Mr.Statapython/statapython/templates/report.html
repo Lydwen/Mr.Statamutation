@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 {# ============= Pre-template calculations ============= #}
 {% set original = 0 %}
-{% set alive = [0] %}
+{% set alive = [-1] %}
 {% set stillborn = [0] %}
 {% set dead = [0] %}
 {% set bool = 0 %}
@@ -86,8 +86,8 @@
 		<div class="col-lg-8">
 			<h3 class="centered">List</h3>
 			<table class="col-lg-12">
-				{% set id = 1 %}
-				{% for report in ([ base_report ] + mutations_reports) %}
+			{% set id = 1 %}
+			{% for report in ([ base_report ] + mutations_reports) %}
 				<tr data-toggle="modal" data-target="#myModal{{id}}">
 					<td>{{ report.name }}</td>
 
@@ -109,63 +109,59 @@
 						<h4 class="modal-title">{{ report.name }}</h4>
 					  </div>
 					  <div class="modal-body">
-						<div id="chartContainer{{id}}" class="chart"></div>
+						<div id="container{{id}}" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
 					  </div>
 					  <div class="modal-footer">
 						<button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fa fa-times"></i></button>
 					  </div>
 					</div>
 					
-					<script>
-						$(function () {
-							var chart = new Highcharts.Chart({
-								chart: {
-									renderTo: 'chartContainer{{id}}',
-									type: 'column',
-									backgroundColor: "#F2F2F2"
-								},
-								title: {
-									text: 'Percent of tests succeeded/failed by mutations'
-								},
-								xAxis: {
-									categories: ['Mutation n°1', 'Mutation n°2', 'Mutation n°3', 'Mutation n°4']
-								},
-								yAxis: {
-									allowDecimals: false,
-									min: 0,
-									max: 100,
-									title: {
-										text: 'Success/Fails percents (%)'
-									}
-								},
-								tooltip: {
-									headerFormat: '<b>{point.key}</b><br>',
-									pointFormat: '<span style="color:{series.color}">\u25CF</span> {series.name}: {point.y} / 100'
-								},
-								plotOptions: {
-									column: {
-										stacking: 'normal',
-										depth: 40
-									}
-								},
-								series: [{
-									name: 'Success',
-									data: [20, 40, 60, 80],									
-									stack: 'comp'
-								},
-								{
-									name: 'Fails (failures + errors)',
-									data: [20, 40, 60, 80],
-									stack: 'comp'
-								}]
-							});
-						});
-					</script>
-
 				  </div>
 				</div>
+				
+				<script>
+					$(function () {
+						$('#container{{id}}').highcharts({
+							chart: {
+								type: 'column'
+							},
+							title: {
+								text: 'Stacked column chart'
+							},
+							xAxis: {
+								categories: ['Apples', 'Oranges', 'Pears', 'Grapes', 'Bananas']
+							},
+							yAxis: {
+								min: 0,
+								title: {
+									text: 'Total fruit consumption'
+								}
+							},
+							tooltip: {
+								pointFormat: '<span style="color:{series.color}">{series.name}</span>: <b>{point.y}</b> ({point.percentage:.0f}%)<br/>',
+								shared: true
+							},
+							plotOptions: {
+								column: {
+									stacking: 'percent'
+								}
+							},
+							series: [{
+								name: 'John',
+								data: [5, 3, 4, 7, 2]
+							}, {
+								name: 'Jane',
+								data: [2, 2, 3, 2, 1]
+							}, {
+								name: 'Joe',
+								data: [3, 4, 4, 2, 5]
+							}]
+						});
+					});
+				</script>
+				
 				{% set id = id + 1 %}
-				{% endfor %}
+			{% endfor %}
 				
 				
 			</table>
