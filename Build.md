@@ -8,8 +8,11 @@
 ### Mr.Stataspoon ###
 
 Le projet contenant les mutations implémentées (processeurs et sélécteurs) est un projet Maven.
-Cependant, celui-ci n'étant pas en ligne sur un repository officiel Maven, il est nécessaire de l'installer manuellement dans le repository local de la machine. \s\s
-Pour ce faire, il faut récupérer le projet à l'adresse suivante : https://github.com/Lydwen/Mr.Statamutation/tree/master/Mr.Stataspoon \s\s
+
+Cependant, celui-ci n'étant pas en ligne sur un repository officiel Maven, il est nécessaire de l'installer manuellement dans le repository local de la machine.
+
+Pour ce faire, il faut récupérer le projet à l'adresse suivante : https://github.com/Lydwen/Mr.Statamutation/tree/master/Mr.Stataspoon
+
 Puis, dans le dossier du projet, l'installer à l'aide de la commande :
 ~~~shell
 	mvn install
@@ -18,8 +21,10 @@ Puis, dans le dossier du projet, l'installer à l'aide de la commande :
 ### Mr.Statapython ###
 
 L'exécution de la chaine de build s'effectue grâce à un module Python. Pour les mêmes raisons que **Mr.Stataspoon**
-(à savoir que le projet n'est pas en ligne sur un repository officiel Python), il est nécessaire de l'installer manuellement sur la machine. \s\s
-Pour ce faire, il faut récupérer le projet à l'adresse suivante (on commence à avoir l'habitude) : https://github.com/Lydwen/Mr.Statamutation/tree/master/Mr.Statapython \s\s
+(à savoir que le projet n'est pas en ligne sur un repository officiel Python), il est nécessaire de l'installer manuellement sur la machine.
+
+Pour ce faire, il faut récupérer le projet à l'adresse suivante (on commence à avoir l'habitude) : https://github.com/Lydwen/Mr.Statamutation/tree/master/Mr.Statapython
+
 Puis, dans le dossier du projet, l'installer à l'aide de la commande :
 ~~~shell
 	python setup.py install
