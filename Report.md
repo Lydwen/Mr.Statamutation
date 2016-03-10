@@ -11,12 +11,13 @@ Nous pensons avoir bien travaillé puisque nous sommes parvenus
 à réaliser une application fonctionnelle qui répond aux
 besoins énoncé par le probleme.
 
-Cependant, avec plus de temps, nous aurions pu améliorer notre
-application en :
-- implémenter plus de processeurs
-- implémenter plus de sélecteurs
-- paralléliser les processus de test
-- améliorer le détails du rapport
+Plusieurs pistes d'améliorations sont possibles. Avec plus de temps (ne jamais négliger le prochain sprint !), 
+les axes suivants auraient pu, par exemple, être améliorés/implémentés :
+- plus de processeurs
+- plus de sélecteurs
+- améliorer le rapport (graphiques présentés, détails par mutations, etc.)
+- paralélliser la chaine de build (plusieurs mutations en même temps)
+- script de déploiement du framework
 
 
 ## Analyse du programme ##
@@ -25,22 +26,29 @@ application en :
 
 > Portabilité
 
-- Python 
-- Java 
+Le projet ne se base que sur des technologies qui sont multi-plateformes, à savoir :
+<ul>
+<li>les langages Java et Python</li>
+<li>le framework Maven</li>
+</ul>
+
+Par conséquent, notre projet est portable sur toutes les plateformes sur lesquelles ces technologies le sont.
 
 	
-> Facile à utiliser
+> Utilisation facile
 
-- Une commande et basta
-	
-	
-> Installeur 
+L'ensemble de l'éxécution de la chaine de build s'effectue par l'appel d'une simple commande.
+De plus, les configurations sont effectuées grâce à des fichiers XML (langage human-readable), et par conséquent simples d'utilisation et de compréhension.
 
-Tous les outils nécessaires au 
-fonctionnement du programme  sont compressés dans des archives. 
-L'installeur setup.py permet de XXX.
-	
-	
+
+> Installation rapide 
+
+L'installation est relativement facile et rapide. Il est juste nécéssaire de récupérer les projets, ces derniers s'installent en 2 commandes.
+Aussi, le script setup.py permet l'installation de différents composants tels que les frameworks Bootstrap et Highcharts utiles à la création du rapport HTML. 
+
+Pour plus de détails, voir le fichier [Build.md](./Build.md).
+
+
 > Rapport HTML
 	
 Le rapport inclut les résultats des tests de toutes les mutations.
