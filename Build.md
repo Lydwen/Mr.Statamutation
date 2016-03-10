@@ -11,7 +11,7 @@ Le projet contenant les mutations implémentées (processeurs et sélécteurs) e
 
 Cependant, celui-ci n'étant pas en ligne sur un repository officiel Maven, il est nécessaire de l'installer manuellement dans le repository local de la machine.
 
-Pour ce faire, il faut récupérer le projet à l'adresse suivante : [./Mr.Statapoon/]
+Pour ce faire, il faut récupérer le projet [Mr.Statapoon](./Mr.Statapoon/)
 
 Puis, dans le dossier du projet, l'installer à l'aide de la commande :
 ~~~shell
@@ -23,7 +23,7 @@ Puis, dans le dossier du projet, l'installer à l'aide de la commande :
 L'exécution de la chaine de build s'effectue grâce à un module Python. Pour les mêmes raisons que **Mr.Stataspoon**
 (à savoir que le projet n'est pas en ligne sur un repository officiel Python), il est nécessaire de l'installer manuellement sur la machine.
 
-Pour ce faire, il faut récupérer le projet suivant (on commence à avoir l'habitude) : [./Mr.Statapython/]
+Pour ce faire, il faut récupérer le projet suivant (on commence à avoir l'habitude) : [Mr.Statapython](./Mr.Statapython/)
 
 Puis, dans le dossier du projet, l'installer à l'aide de la commande :
 ~~~shell
