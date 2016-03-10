@@ -73,3 +73,21 @@ class Directory:
                 Directory.copy(s, d, symlinks, ignore)
             else:
                 shutil.copy2(s, d)
+
+    @staticmethod
+    def file_exists(filepath):
+        """
+        Check if a file exists.
+        :param filepath: file to check
+        :return: True if exists, False otherwise
+        """
+        filepath = os.path.abspath(filepath)
+
+        if not os.path.exists(filepath): return False
+        if not os.path.isfile(filepath): return False
+
+        try:
+            with open(filepath):
+                return True
+        except IOError:
+            return False
