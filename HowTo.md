@@ -1,6 +1,4 @@
-# Mr.Statamutation #
---------------------
-# How To #
+# Mr.Statamutation :: How To... #
 
 ## 1. Installation ##
 
@@ -10,7 +8,7 @@ Voir le fichier **Build.md**.
 
 ### Configuration du projet à muter ###
 
-Dans un premier temps, il est nécessaire de configurer le projet à muter. \
+Dans un premier temps, il est nécessaire de configurer le projet à muter. \\
 Pour ce faire, il faut rajouter le code suivant dans le **pom.xml** :
 ~~~xml
 			<plugin>
@@ -44,7 +42,7 @@ Pour ce faire, il faut rajouter le code suivant dans le **pom.xml** :
 
 ### Configuration des mutations à appliquer ###
 
-Dans un second temps, il est nécessaire de configurer les mutations et sélécteurs associés, à appliquer à votre projet. \
+Dans un second temps, il est nécessaire de configurer les mutations et sélécteurs associés, à appliquer à votre projet. \\
 Pour ce faire, il faut créer un fichier **statamutations.xml** à la racine de votre projet. Le fichier doit être de la forme suivante : 
 ~~~xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -74,7 +72,7 @@ Du moment que vous avez suivi les étapes précédentes, la chaine de build s'ex
 	python -m statapython
 ~~~
 
-Le programme va alors appliquer les tests sur le projet original, puis effectuer chacune des mutations configurées et y appliquer les tests. \
+Le programme va alors appliquer les tests sur le projet original, puis effectuer chacune des mutations configurées et y appliquer les tests. \\
 Un rapport est ensuite généré. L'ensemble des résultats est alors disponible dans le dossier **./target/statam-report/**.
 	
 Un certain nombre de paramètres est disponible, à savoir pour les plus importants :
