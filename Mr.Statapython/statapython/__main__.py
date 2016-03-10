@@ -44,7 +44,9 @@ def main(args):
 
         # Execute every mutations
         for mutation in mutations:
-            mutator.process(mutation['name'], mutation['processors']['processor'])
+            mutator.process(mutation['name'],
+                            mutation['processors'].get('processor', ()) if mutation.get('processors', None) else (),
+                            mutation['selectors'].get('selector', ()) if mutation.get('selectors', None) else ())
 
     # Check if report generation is enabled
     if not args.disable_report:

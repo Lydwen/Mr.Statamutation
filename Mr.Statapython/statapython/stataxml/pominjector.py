@@ -30,6 +30,21 @@ class PomInjector:
             xml_processor = Xml.SubElement(xml_processors, 'processor')
             xml_processor.text = processor
 
+    def inject_selectors(self, selectors):
+        """
+        Inject selectors in the current loaded pom.
+        :param selectors: selectors to inject
+        """
+        # Select <selectors> node
+        xml_selectors = self.select_selectors_element(
+            self.select_plugin_element()
+        )
+
+        # Append selectors
+        for selector in selectors:
+            xml_selector = Xml.SubElement(xml_selectors, 'selector', {'name': selector['@name']})
+            xml_selector.text = selector['#text']
+
     def select_plugin_element(self):
         """
         Select the spoon-maven-plugin configuration.
@@ -62,6 +77,23 @@ class PomInjector:
 
         return processors
 
+    def select_selectors_element(self, plugin):
+        """
+        Select configuration of the plugin element.
+        :param plugin: plugin element
+        :return: selectors configuration
+        """
+        if plugin is None: return None
+
+        # Get <configuration> node
+        config = plugin.find('./configuration', NS)
+
+        # Get or create <selectors> node
+        selectors = config.find('./mvn:selectors', NS)
+        if selectors is None: selectors = Xml.SubElement(config, 'selectors')
+
+        return selectors
+
     def save(self, custom_pom):
         """
         Save the current XML to specified file.
@@ -70,5 +102,5 @@ class PomInjector:
         self.pom.write(
             custom_pom,
             xml_declaration=True,
-            encoding='UTF-8'
+            encoding='UTF-8',
         )

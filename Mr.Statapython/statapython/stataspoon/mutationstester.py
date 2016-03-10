@@ -31,16 +31,18 @@ class MutationsTester:
         except:
             Logger.log('[Warning] Error on cleaning tests directory ("%s")' % self.tests_directory)
 
-    def inject_processors(self, processors, filename):
+    def inject(self, processors, selectors, filename):
         """
         Inject processors in a custom pom.xml file.
         :param processors: processors to inject
+        :param selectors: selectors to inject
         :param filename: custom pom.xml filename
         :return: path to the custom pom.xml
         """
         # Injector processors
         injector = PomInjector(POM_FILENAME)
         injector.inject_processors(processors)
+        injector.inject_selectors(selectors)
 
         # Save to the new file
         injector.save(filename)
@@ -54,14 +56,15 @@ class MutationsTester:
         :param selectors: selectors to apply
         """
         if not isinstance(processors, (list, tuple)): processors = (processors,)  # Bind to list
+        if not isinstance(selectors, (list, tuple)): selectors = (selectors,)  # Bind to list
 
         self.clean()
         Logger.log('========================== Mutation "%s" ==========================' % name,
                    True)
 
-        # Inject processors
+        # Inject processors and selectors
         Logger.log('Injecting processors in "%s": %s' % (CUSTOM_POM_FILENAME, processors))
-        pom_file = self.inject_processors(processors, CUSTOM_POM_FILENAME)
+        pom_file = self.inject(processors, selectors, CUSTOM_POM_FILENAME)
 
         # Prepare command to execute
         command = 'mvn test -f "%s"' % pom_file
